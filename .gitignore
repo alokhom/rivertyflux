@@ -3,9 +3,9 @@
 /*
 
 # Not these directories
-!/apps/*
-!/clusters/*
-!/infra/*
+!/apps/
+!/clusters/
+!/infra/
 
 # Not these files
 !.gitignore
