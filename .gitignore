@@ -1,15 +1,3 @@
-
-# Ignore everything
-*
-
-# Not these directories
-!/apps/**
-!/clusters/**
-!/infra/**
-
-# Not these files
-!.gitignore
-
 # Compiled source #
 ###################
 *.com
