@@ -1942,9 +1942,9 @@ spec:
     externalDatabase:
       host: pg-postgresql.database
       port: 5432
-      user: postgres
-      database: postgres
-      password: "postgres"
+      user: db_user
+      database: db_name
+      password: "secret"
       existingSecret: ""
       existingSecretPasswordKey: ""
     ## Redis&reg; chart configuration
