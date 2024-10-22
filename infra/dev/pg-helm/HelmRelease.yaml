@@ -80,7 +80,9 @@ spec:
         host all all 10.43.0.0/24 md5
       initdbscripts: |-
         #!/bin/sh
-        echo "helloworld"
+        sleep 5;
+        echo "helloworld";
+        sleep 5;
         PGPASSWORD=postgres psql -h localhost -U postgres -p 5432 -d postgres -c "CREATE USER db_user WITH PASSWORD 'secret';"
         #CREATE DATABASE db_name WITH OWNER db_user;GRANT ALL PRIVILEGES ON DATABASE db_name TO db_user;"
       ## ConfigMap with PostgreSQL configuration
