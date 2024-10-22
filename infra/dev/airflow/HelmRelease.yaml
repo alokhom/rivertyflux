@@ -1945,11 +1945,11 @@ spec:
     ## @param externalDatabase.existingSecretPasswordKey Name of an existing secret key containing the database credentials
     ##
     externalDatabase:
-      host: localhost
+      host: pg-postgresql.database.svc
       port: 5432
-      user: bn_airflow
-      database: bitnami_airflow
-      password: ""
+      user: postgres
+      database: postgres
+      password: "postgres"
       existingSecret: ""
       existingSecretPasswordKey: ""
     ## Redis&reg; chart configuration
