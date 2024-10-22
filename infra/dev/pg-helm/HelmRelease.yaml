@@ -81,7 +81,8 @@ spec:
       initdbscripts: |-
         #!/bin/sh
         echo "helloworld"
-        PGPASSWORD=postgres psql -h localhost -U postgres -p 5432 -d postgres -c "CREATE USER db_user WITH PASSWORD 'secret';CREATE DATABASE db_name WITH OWNER db_user;GRANT ALL PRIVILEGES ON DATABASE db_name TO db_user;"
+        PGPASSWORD=postgres psql -h localhost -U postgres -p 5432 -d postgres -c "CREATE USER db_user WITH PASSWORD 'secret';"
+        #CREATE DATABASE db_name WITH OWNER db_user;GRANT ALL PRIVILEGES ON DATABASE db_name TO db_user;"
       ## ConfigMap with PostgreSQL configuration
       ## NOTE: This will override postgresql.config and postgresql.pghba
       # configMap:
