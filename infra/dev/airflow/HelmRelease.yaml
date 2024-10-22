@@ -1940,7 +1940,7 @@ spec:
     ## @param externalDatabase.existingSecretPasswordKey Name of an existing secret key containing the database credentials
     ##
     externalDatabase:
-      host: pg-postgresql.database.svc.cluster.local
+      host: pg-postgresql-0.database
       port: 5432
       user: postgres
       database: postgres
