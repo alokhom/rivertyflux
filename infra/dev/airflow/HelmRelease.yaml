@@ -113,7 +113,7 @@ spec:
     ## @param executor Airflow executor. Allowed values: `SequentialExecutor`, `LocalExecutor`, `CeleryExecutor`, `KubernetesExecutor`, `CeleryKubernetesExecutor` and `LocalKubernetesExecutor`
     ## ref: http://airflow.apache.org/docs/stable/executor/index.html
     ##
-    executor: CeleryExecutor
+    #executor: CeleryExecutor
     executor: KubernetesExecutor
     ## @param loadExamples Switch to load some Airflow examples
     ##
