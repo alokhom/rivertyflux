@@ -5,15 +5,10 @@ metadata:
   namespace: airflow
 spec:
   interval: 30m
-  chart:
-    spec:
-      chart: airflow
-      version: "20.0.0"
-      sourceRef:
-        kind: HelmRepository
-        name: apache-airflow
-        namespace: airflow
-      interval: 5m
+  chartRef:
+    kind: OCIRepository
+    name: airflow
+    namespace: airflow
   values:
     # Copyright Broadcom, Inc. All Rights Reserved.
     # SPDX-License-Identifier: APACHE-2.0
