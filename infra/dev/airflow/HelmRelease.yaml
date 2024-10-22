@@ -147,7 +147,9 @@ spec:
         enabled: true
 
         # Annotations for the web Ingress
-        annotations: {}
+        annotations:
+          #app.kubernetes.io/ingress.class: "nginx"
+          nginx.ingress.kubernetes.io/ssl-redirect: "false"
 
         # The path for the web Ingress
         path: "/"
@@ -156,12 +158,12 @@ spec:
         pathType: "ImplementationSpecific"
 
         # The hostname for the web Ingress (Deprecated - renamed to `ingress.web.hosts`)
-        host: ""
+        host: "airflow.tech"
 
         # The hostnames or hosts configuration for the web Ingress
         hosts: []
         #   # The hostname for the web Ingress (can be templated)
-        # - name: ""
+        #   - name: "airflow"
         #   # configs for web Ingress TLS
         #   tls:
         #     # Enable TLS termination for the web Ingress
@@ -170,7 +172,7 @@ spec:
         #     secretName: ""
 
         # The Ingress Class for the web Ingress (used only with Kubernetes v1.19 and above)
-        ingressClassName: ""
+        ingressClassName: "nginx"
 
         # configs for web Ingress TLS (Deprecated - renamed to `ingress.web.hosts[*].tls`)
         tls:
@@ -188,10 +190,11 @@ spec:
       # Configs for the Ingress of the flower Service
       flower:
         # Enable web ingress resource
-        enabled: false
+        enabled: true
 
         # Annotations for the flower Ingress
-        annotations: {}
+        annotations:
+          nginx.ingress.kubernetes.io/ssl-redirect: "false"
 
         # The path for the flower Ingress
         path: "/"
@@ -200,7 +203,7 @@ spec:
         pathType: "ImplementationSpecific"
 
         # The hostname for the flower Ingress (Deprecated - renamed to `ingress.flower.hosts`)
-        host: ""
+        host: "flower.tech"
 
         # The hostnames or hosts configuration for the flower Ingress
         hosts: []
@@ -213,7 +216,7 @@ spec:
         #     secretName: ""
 
         # The Ingress Class for the flower Ingress (used only with Kubernetes v1.19 and above)
-        ingressClassName: ""
+        ingressClassName: "nginx"
 
         # configs for flower Ingress TLS (Deprecated - renamed to `ingress.flower.hosts[*].tls`)
         tls:
@@ -427,11 +430,11 @@ spec:
     # Extra env 'items' that will be added to the definition of airflow containers
     # a string is expected (can be templated).
     # TODO: difference from `env`? This is a templated string. Probably should template `env` and remove this.
-    extraEnv: ~
+    # extraEnv: ~
     # eg:
-    # extraEnv: |
-    #   - name: AIRFLOW__CORE__LOAD_EXAMPLES
-    #     value: 'True'
+    extraEnv: |
+      - name: AIRFLOW__CORE__LOAD_EXAMPLES
+        value: 'True'
 
     # Extra envFrom 'items' that will be added to the definition of airflow containers
     # A string is expected (can be templated).
@@ -470,7 +473,7 @@ spec:
         user: postgres
         pass: postgres
         protocol: postgresql
-        host: ~
+        host: pg-postgresql.database
         port: 5432
         db: postgres
         sslmode: disable
@@ -694,7 +697,7 @@ spec:
         #   whenDeleted: Delete
         #   whenScaled: Delete
         # Volume size for worker StatefulSet
-        size: 100Gi
+        size: 50Gi
         # If using a custom storageClass, pass name ref to all statefulSets here
         storageClassName:
         # Execute init container to chown log directory.
