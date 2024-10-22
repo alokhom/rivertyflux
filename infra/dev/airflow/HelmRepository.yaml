@@ -4,5 +4,6 @@ metadata:
   name: apache-airflow
   namespace: airflow
 spec:
+  type: oci
   interval: 5m0s
-  url: https://airflow.apache.org
+  url: oci://registry-1.docker.io/bitnamicharts/airflow
