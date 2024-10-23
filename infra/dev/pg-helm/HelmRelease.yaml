@@ -83,9 +83,9 @@ spec:
         set -e
 
         psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOSQL
-                CREATE USER db_user WITH PASSWORD 'secret';
-                CREATE DATABASE db_name;
-                GRANT ALL PRIVILEGES ON DATABASE db_name TO db_user;
+                CREATE USER bn_airflow WITH PASSWORD 'secret';
+                CREATE DATABASE bitnami_airflow;
+                GRANT ALL PRIVILEGES ON DATABASE bitnami_airflow TO bn_airflow;
         EOSQL
       ## ConfigMap with PostgreSQL configuration
       ## NOTE: This will override postgresql.config and postgresql.pghba
