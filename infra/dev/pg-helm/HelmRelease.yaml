@@ -20,7 +20,7 @@ spec:
     ##
     image:
       repository: postgres
-      tag: "17.0"
+      tag: "16.0"
       pullPolicy: IfNotPresent
 
       ## Optionally specify an imagePullSecret.
