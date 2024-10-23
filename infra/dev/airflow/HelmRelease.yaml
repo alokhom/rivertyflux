@@ -1944,7 +1944,7 @@ spec:
       port: 5432
       user: bn_airflow
       database: bitnami_airflow
-      password: ""
+      password: "bn_pass123"
       existingSecret: ""
       existingSecretPasswordKey: ""
     ## Redis&reg; chart configuration
