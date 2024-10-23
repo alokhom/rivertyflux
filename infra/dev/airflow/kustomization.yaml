@@ -4,3 +4,4 @@ resources:
   - namespace.yaml
   - OciRepository.yaml
   - HelmRelease.yaml
+  - secret.yaml

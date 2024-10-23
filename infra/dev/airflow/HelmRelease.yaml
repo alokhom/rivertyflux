@@ -1944,9 +1944,9 @@ spec:
       port: 5432
       user: bn_airflow
       database: bitnami_airflow
-      password: "bn_pass123"
-      existingSecret: ""
-      existingSecretPasswordKey: ""
+      password: ""
+      existingSecret: dbpass
+      existingSecretPasswordKey: "postgresql-password"
     ## Redis&reg; chart configuration
     ## ref: https://github.com/bitnami/charts/blob/main/bitnami/redis/values.yaml
     ## @param redis.enabled Switch to enable or disable the Redis&reg; helm
