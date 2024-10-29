@@ -1282,7 +1282,7 @@ spec:
         ##     path: /
         ##
         repositories:
-          - repository: "https://github.com:alokhom/rivertyflux"
+          - repository: "https://github.com/alokhom/rivertyflux"
             ## Branch from repository to checkout
             ##
             branch: "main"
