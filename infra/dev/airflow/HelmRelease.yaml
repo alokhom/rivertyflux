@@ -1269,7 +1269,7 @@ spec:
       ## @param git.dags.repositories [array] Array of repositories from which to download DAG files
       ##
       dags:
-        enabled: false
+        enabled: true
         ## Name for repositories can be anything unique and must follow same naming conventions as kubernetes.
         ## Kubernetes resources can have names up to 253 characters long. The characters allowed in names are:
         ## digits (0-9), lower case letters (a-z), -, and .
@@ -1280,16 +1280,16 @@ spec:
         ##     path: /
         ##
         repositories:
-          - repository: ""
+          - repository: "https://github.com:alokhom/rivertyflux.git"
             ## Branch from repository to checkout
             ##
-            branch: ""
+            branch: "main"
             ## An unique identifier for repository, must be unique for each repository
             ##
-            name: ""
+            name: "dagfiles"
             ## Path to a folder in the repository containing the dags
             ##
-            path: ""
+            path: "apps/dags"
       ## Get Plugins files from git repositories.
       ## @param git.plugins.enabled Enable in order to download Plugins files from git repositories.
       ## @param git.plugins.repositories [array] Array of repositories from which to download DAG files
@@ -1616,7 +1616,7 @@ spec:
     metrics:
       ## @param metrics.enabled Whether or not to create a standalone Airflow exporter to expose Airflow metrics
       ##
-      enabled: false
+      enabled: true
       ## Bitnami Airflow exporter image
       ## ref: https://hub.docker.com/r/bitnami/airflow-exporter/tags/
       ## @param metrics.image.registry [default: REGISTRY_NAME] Airflow exporter image registry
