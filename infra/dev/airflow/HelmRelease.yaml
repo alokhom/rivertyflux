@@ -181,8 +181,6 @@ spec:
       value: "bn_airflow"
     - name: AIRFLOW_EMAIL
       value: "alok.hom@gmail.com"
-    #- name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
-    #  value: "postgresql+psycopg2://bn_airflow:<password>@pg-postgresql.database/bitnami_airflow"
     - name: AIRFLOW__DATABASE__SQL_ALCHEMY_SCHEMA
       value: "public"
     ## @param extraEnvVarsCM ConfigMap with extra environment variables for all the Airflow pods
@@ -242,8 +240,8 @@ spec:
       image:
         registry: docker.io
         repository: bitnami/airflow
-        #tag: 2.10.2-debian-12-r0
-        tag: 2.10.2
+        tag: 2.10.2-debian-12-r0
+        #tag: 2.10.2
         digest: ""
         ## Specify a imagePullPolicy
         ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
