@@ -156,9 +156,9 @@ spec:
         pullSecrets: []
     ## @param extraEnvVars Add extra environment variables for all the Airflow pods
     ##
-    extraEnvVars:
-     - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
-       value: "bar"
+    extraEnvVars: []
+    # - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
+    #   value: "bar"
     ## @param extraEnvVarsCM ConfigMap with extra environment variables for all the Airflow pods
     ##
     extraEnvVarsCM: ""
