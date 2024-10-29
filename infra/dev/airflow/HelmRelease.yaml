@@ -156,7 +156,9 @@ spec:
         pullSecrets: []
     ## @param extraEnvVars Add extra environment variables for all the Airflow pods
     ##
-    extraEnvVars: []
+    extraEnvVars:
+     - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
+       value: "bar"
     ## @param extraEnvVarsCM ConfigMap with extra environment variables for all the Airflow pods
     ##
     extraEnvVarsCM: ""
@@ -1956,14 +1958,14 @@ spec:
     ## @param redis.architecture Redis&reg; architecture. Allowed values: `standalone` or `replication`
     ##
     redis:
-      enabled: false
+      enabled: true
       auth:
         enabled: true
         ## Redis&reg; password (both master and slave). Defaults to a random 10-character alphanumeric string if not set and auth.enabled is true.
         ## It should always be set using the password value or in the existingSecret to avoid issues
         ## with Airflow.
         ## The password value is ignored if existingSecret is set
-        password: ""
+        password: "redis123"
         existingSecret: ""
       architecture: standalone
       master:
