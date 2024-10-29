@@ -57,7 +57,24 @@ spec:
     clusterDomain: cluster.local
     ## @param extraDeploy Extra objects to deploy (evaluated as a template)
     ##
-    extraDeploy: []
+    extraDeploy:
+      - apiVersion: v1
+        data:
+          requirements.txt: |
+            distlib==0.3.8
+            filelock==3.16.1
+            pip==24.2
+            pip==23.3.2
+            platformdirs==4.3.6
+            setuptools==70.3.0
+            virtualenv==20.26.5
+            psycopg2-binary>=2.9.4
+            apache-airflow-providers-common-sql>=1.17.0
+            apache-airflow-providers-postgres>=5.13.1        
+        kind: ConfigMap
+        metadata:
+          name: requirements
+          namespace: airflow
     ## @param commonLabels Add labels to all the deployed resources
     ##
     commonLabels: {}
@@ -165,6 +182,10 @@ spec:
       value: "bn_airflow"
     - name: AIRFLOW_EMAIL
       value: "alok.hom@gmail.com"
+    #- name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
+    #  value: "postgresql+psycopg2://bn_airflow:<password>@pg-postgresql.database/bitnami_airflow"
+    - name: AIRFLOW__DATABASE__SQL_ALCHEMY_SCHEMA
+      value: "public"
     ## @param extraEnvVarsCM ConfigMap with extra environment variables for all the Airflow pods
     ##
     extraEnvVarsCM: ""
@@ -198,10 +219,16 @@ spec:
     initContainers: []
     ## @param extraVolumeMounts Optionally specify extra list of additional volumeMounts for all the Airflow pods
     ##
-    extraVolumeMounts: []
+    extraVolumeMounts:
+      - name: requirements
+        mountPath: /bitnami/python/requirements.txt
+        subPath: requirements.txt
     ## @param extraVolumes Optionally specify extra list of additional volumes for the all the Airflow pods
     ##
-    extraVolumes: []
+    extraVolumes:
+      - name: requirements
+        configMap:
+          name: requirements
     ## @section Airflow web parameters
     web:
       ## Bitnami Airflow image version
@@ -478,10 +505,16 @@ spec:
       initContainers: []
       ## @param web.extraVolumeMounts Optionally specify extra list of additional volumeMounts for the Airflow web pods
       ##
-      extraVolumeMounts: []
-      ## @param web.extraVolumes Optionally specify extra list of additional volumes for the Airflow web pods
+      extraVolumeMounts:
+        - name: requirements
+          mountPath: /bitnami/python/requirements.txt
+          subPath: requirements.txt
+      ## @param extraVolumes Optionally specify extra list of additional volumes for the all the Airflow pods
       ##
-      extraVolumes: []
+      extraVolumes:
+        - name: requirements
+          configMap:
+            name: requirements
       ## Airflow web Pod Disruption Budget
       ## ref: https://kubernetes.io/docs/concepts/workloads/pods/disruptions/
       ## @param web.pdb.create Deploy a pdb object for the Airflow web pods
@@ -813,10 +846,16 @@ spec:
       initContainers: []
       ## @param scheduler.extraVolumeMounts Optionally specify extra list of additional volumeMounts for the Airflow scheduler pods
       ##
-      extraVolumeMounts: []
-      ## @param scheduler.extraVolumes Optionally specify extra list of additional volumes for the Airflow scheduler pods
+      extraVolumeMounts:
+        - name: requirements
+          mountPath: /bitnami/python/requirements.txt
+          subPath: requirements.txt
+      ## @param extraVolumes Optionally specify extra list of additional volumes for the all the Airflow pods
       ##
-      extraVolumes: []
+      extraVolumes:
+        - name: requirements
+          configMap:
+            name: requirements
       ## Airflow scheduler Pod Disruption Budget
       ## ref: https://kubernetes.io/docs/concepts/workloads/pods/disruptions/
       ## @param scheduler.pdb.create Deploy a pdb object for the Airflow scheduler pods
