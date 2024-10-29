@@ -170,7 +170,7 @@ spec:
     extraEnvVarsCM: ""
     ## @param extraEnvVarsSecret Secret with extra environment variables for all the Airflow pods
     ##
-    extraEnvVarsSecret: "airflow_envvar"
+    extraEnvVarsSecret: "airflow-envvar"
     ## @param extraEnvVarsSecrets List of secrets with extra environment variables for all the Airflow pods
     ##
     extraEnvVarsSecrets: []
