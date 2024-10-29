@@ -502,16 +502,10 @@ spec:
       initContainers: []
       ## @param web.extraVolumeMounts Optionally specify extra list of additional volumeMounts for the Airflow web pods
       ##
-      extraVolumeMounts:
-        - name: requirements
-          mountPath: /bitnami/python/requirements.txt
-          subPath: requirements.txt
+      extraVolumeMounts: []
       ## @param extraVolumes Optionally specify extra list of additional volumes for the all the Airflow pods
       ##
-      extraVolumes:
-        - name: requirements
-          configMap:
-            name: requirements
+      extraVolumes: []
       ## Airflow web Pod Disruption Budget
       ## ref: https://kubernetes.io/docs/concepts/workloads/pods/disruptions/
       ## @param web.pdb.create Deploy a pdb object for the Airflow web pods
@@ -843,16 +837,10 @@ spec:
       initContainers: []
       ## @param scheduler.extraVolumeMounts Optionally specify extra list of additional volumeMounts for the Airflow scheduler pods
       ##
-      extraVolumeMounts:
-        - name: requirements
-          mountPath: /bitnami/python/requirements.txt
-          subPath: requirements.txt
+      extraVolumeMounts: []
       ## @param extraVolumes Optionally specify extra list of additional volumes for the all the Airflow pods
       ##
-      extraVolumes:
-        - name: requirements
-          configMap:
-            name: requirements
+      extraVolumes: []
       ## Airflow scheduler Pod Disruption Budget
       ## ref: https://kubernetes.io/docs/concepts/workloads/pods/disruptions/
       ## @param scheduler.pdb.create Deploy a pdb object for the Airflow scheduler pods
@@ -1188,16 +1176,10 @@ spec:
       initContainers: []
       ## @param worker.extraVolumeMounts Optionally specify extra list of additional volumeMounts for the Airflow worker pods
       ##
-      extraVolumeMounts:
-        - name: requirements
-          mountPath: /bitnami/python/requirements.txt
-          subPath: requirements.txt
+      extraVolumeMounts: []
       ## @param extraVolumes Optionally specify extra list of additional volumes for the all the Airflow pods
       ##
-      extraVolumes:
-        - name: requirements
-          configMap:
-            name: requirements
+      extraVolumes: []
       ## @param worker.extraVolumeClaimTemplates Optionally specify extra list of volumesClaimTemplates for the Airflow worker statefulset
       ##
       extraVolumeClaimTemplates: []
