@@ -1958,6 +1958,7 @@ spec:
     ## @param redis.architecture Redis&reg; architecture. Allowed values: `standalone` or `replication`
     ##
     redis:
+      #executor=KubernetesExecutor redis is false
       enabled: false
       auth:
         enabled: true
