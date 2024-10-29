@@ -156,15 +156,21 @@ spec:
         pullSecrets: []
     ## @param extraEnvVars Add extra environment variables for all the Airflow pods
     ##
-    extraEnvVars: []
+    extraEnvVars:
     # - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
     #   value: "bar"
+    - name: AIRFLOW_DATABASE_NAME
+      value: "bitnami_airflow"
+    - name: AIRFLOW_DATABASE_USERNAME
+      value: "bn_airflow"
+    - name: AIRFLOW_EMAIL
+      value: "alok.hom@gmail.com"
     ## @param extraEnvVarsCM ConfigMap with extra environment variables for all the Airflow pods
     ##
     extraEnvVarsCM: ""
     ## @param extraEnvVarsSecret Secret with extra environment variables for all the Airflow pods
     ##
-    extraEnvVarsSecret: ""
+    extraEnvVarsSecret: "airflow_envvar"
     ## @param extraEnvVarsSecrets List of secrets with extra environment variables for all the Airflow pods
     ##
     extraEnvVarsSecrets: []

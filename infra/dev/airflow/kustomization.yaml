@@ -5,3 +5,4 @@ resources:
   - OciRepository.yaml
   - HelmRelease.yaml
   - secret.yaml
+  - db_secret.yaml
