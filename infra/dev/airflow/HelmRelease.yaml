@@ -57,23 +57,24 @@ spec:
     clusterDomain: cluster.local
     ## @param extraDeploy Extra objects to deploy (evaluated as a template)
     ##
-    extraDeploy: []
-    #   - apiVersion: v1
-    #     data:
-    #       requirements.txt: |
-    #         distlib==0.3.8
-    #         filelock==3.16.1
-    #         pip==24.3.1
-    #         platformdirs==4.3.6
-    #         setuptools==70.3.0
-    #         virtualenv==20.26.5
-    #         #psycopg2-binary>=2.9.4
-    #         #apache-airflow-providers-common-sql>=1.17.0
-    #         #apache-airflow-providers-postgres>=5.13.1        
-    #     kind: ConfigMap
-    #     metadata:
-    #       name: requirements
-    #       namespace: airflow
+    extraDeploy:
+      - apiVersion: v1
+        data:
+          requirements.txt: |
+            Flask-Admin==1.6.1
+            #distlib==0.3.8
+            #filelock==3.16.1
+            #pip==24.3.1
+            #platformdirs==4.3.6
+            #setuptools==70.3.0
+            #virtualenv==20.26.5
+            #psycopg2-binary>=2.9.4
+            #apache-airflow-providers-common-sql>=1.17.0
+            #apache-airflow-providers-postgres>=5.13.1        
+        kind: ConfigMap
+        metadata:
+          name: requirements
+          namespace: airflow
     ## @param commonLabels Add labels to all the deployed resources
     ##
     commonLabels: {}
@@ -223,16 +224,16 @@ spec:
     initContainers: []
     ## @param extraVolumeMounts Optionally specify extra list of additional volumeMounts for all the Airflow pods
     ##
-    # extraVolumeMounts:
-    #   - name: requirements
-    #     mountPath: /bitnami/python/requirements.txt
-    #     subPath: requirements.txt
-    # ## @param extraVolumes Optionally specify extra list of additional volumes for the all the Airflow pods
-    # ##
-    # extraVolumes:
-    #   - name: requirements
-    #     configMap:
-    #       name: requirements
+    extraVolumeMounts:
+      - name: requirements
+        mountPath: /bitnami/python/requirements.txt
+        subPath: requirements.txt
+    ## @param extraVolumes Optionally specify extra list of additional volumes for the all the Airflow pods
+    ##
+    extraVolumes:
+      - name: requirements
+        configMap:
+          name: requirements
     ## @section Airflow web parameters
     web:
       ## Bitnami Airflow image version
