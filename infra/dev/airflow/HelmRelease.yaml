@@ -1353,7 +1353,7 @@ spec:
       ## @param git.plugins.repositories [array] Array of repositories from which to download DAG files
       ##
       plugins:
-        enabled: true
+        enabled: false
         repositories: []
           # - repository: "https://github.com/teamclairvoyant/airflow-rest-api-plugin.git"
           #   ## Branch from repository to checkout
