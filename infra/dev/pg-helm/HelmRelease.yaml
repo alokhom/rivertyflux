@@ -86,6 +86,8 @@ spec:
                 CREATE DATABASE bitnami_airflow;
                 CREATE USER bn_airflow WITH PASSWORD 'bn_pass123';
                 GRANT ALL PRIVILEGES ON DATABASE bitnami_airflow    TO bn_airflow;
+                \c bitnami_airflow postgres
+                GRANT ALL ON SCHEMA public TO bn_airflow;
         EOSQL
       ## ConfigMap with PostgreSQL configuration
       ## NOTE: This will override postgresql.config and postgresql.pghba
