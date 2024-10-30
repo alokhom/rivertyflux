@@ -6,3 +6,4 @@ resources:
   - HelmRelease.yaml
   - secret.yaml
   - db_secret.yaml
+  - promex-HelmRelease.yaml
