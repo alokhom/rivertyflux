@@ -85,8 +85,10 @@ spec:
         psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOSQL
                 CREATE DATABASE bitnami_airflow;
                 CREATE USER bn_airflow WITH PASSWORD 'bn_pass123';
-                GRANT ALL PRIVILEGES ON DATABASE bitnami_airflow TO bn_airflow;
-                GRANT ALL ON SCHEMA public TO bn_airflow;
+                GRANT ALL PRIVILEGES ON DATABASE bitnami_airflow    TO bn_airflow;
+                GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO bn_airflow;
+                GRANT ALL            ON               SCHEMA public TO bn_airflow;
+                grant usage          on               schema public to bn_airflow;
                 ALTER USER bn_airflow SET search_path = public;
         EOSQL
       ## ConfigMap with PostgreSQL configuration

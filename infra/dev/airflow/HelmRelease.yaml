@@ -57,7 +57,7 @@ spec:
     clusterDomain: cluster.local
     ## @param extraDeploy Extra objects to deploy (evaluated as a template)
     ##
-    # extraDeploy:
+    extraDeploy: []
     #   - apiVersion: v1
     #     data:
     #       requirements.txt: |
