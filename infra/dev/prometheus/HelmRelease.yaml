@@ -1241,12 +1241,14 @@ spec:
       #       replacement: prometheus-blackbox-exporter:9115
     extraScrapeConfigs: |
       - job_name: 'postgres'
+        honor_timestamps: true
         scrape_interval: 60s
+        scrape_timeout: 10s
+        metrics_path: /metrics
+        scheme: http
         static_configs:
-          - targets: ["prometheus-postgres-exporter.airflow:80"]
-            # Replace IP with the hostname of the docker container if you're running the container in a separate network
-
-
+        - targets:
+          - prometheus-postgres-exporter.airflow:80
 
     # Adds option to add alert_relabel_configs to avoid duplicate alerts in alertmanager
     # useful in H/A prometheus with different external labels but the same alerts
