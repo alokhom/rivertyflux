@@ -7,3 +7,4 @@ resources:
   - statsd-HelmRelease.yaml
   - grafana-HelmRepository.yaml
   - grafana-HelmRelease.yaml
+  - grafana-secret.yaml
