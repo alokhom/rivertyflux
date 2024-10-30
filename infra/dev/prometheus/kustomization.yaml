@@ -5,3 +5,5 @@ resources:
   - HelmRepository.yaml
   - HelmRelease.yaml
   - statsd-HelmRelease.yaml
+  - grafana-HellmRepository.yaml
+  - grafana-HellmRelease.yaml
