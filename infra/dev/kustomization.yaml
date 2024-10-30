@@ -4,4 +4,4 @@ resources:
   - ./pg-helm
   - ./nginx
   - ./airflow
-  #- ./prometheus
+  - ./prometheus
