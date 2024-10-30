@@ -88,7 +88,7 @@ spec:
                 GRANT ALL PRIVILEGES ON DATABASE bitnami_airflow    TO bn_airflow;
                 \c bitnami_airflow postgres
                 GRANT ALL ON SCHEMA public TO bn_airflow;
-                GRANT EXECUTE ON FUNCTION pg_ls_waldir TO bn_airflow;
+                GRANT EXECUTE ON FUNCTION pg_ls_dir TO bn_airflow;
         EOSQL
       ## ConfigMap with PostgreSQL configuration
       ## NOTE: This will override postgresql.config and postgresql.pghba
