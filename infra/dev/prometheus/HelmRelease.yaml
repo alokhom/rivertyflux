@@ -1224,7 +1224,7 @@ spec:
     # adds additional scrape configs to prometheus.yml
     # must be a string so you have to add a | after extraScrapeConfigs:
     # example adds prometheus-blackbox-exporter scrape config
-    extraScrapeConfigs: ""
+    extraScrapeConfigs:
       # - job_name: 'prometheus-blackbox-exporter'
       #   metrics_path: /probe
       #   params:
@@ -1239,6 +1239,10 @@ spec:
       #       target_label: instance
       #     - target_label: __address__
       #       replacement: prometheus-blackbox-exporter:9115
+      - job_name: postgres
+        static_configs:
+          - targets: ["127.0.0.1:9187"] # Replace IP with the hostname of the docker container if you're running the container in a separate network
+
 
     # Adds option to add alert_relabel_configs to avoid duplicate alerts in alertmanager
     # useful in H/A prometheus with different external labels but the same alerts
