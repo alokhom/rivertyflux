@@ -1241,7 +1241,7 @@ spec:
       #       replacement: prometheus-blackbox-exporter:9115
       - job_name: postgres
         static_configs:
-          - targets: ["127.0.0.1:9187"] # Replace IP with the hostname of the docker container if you're running the container in a separate network
+          - targets: ["prometheus-postgres-exporter.airflow:80"] # Replace IP with the hostname of the docker container if you're running the container in a separate network
 
 
     # Adds option to add alert_relabel_configs to avoid duplicate alerts in alertmanager
