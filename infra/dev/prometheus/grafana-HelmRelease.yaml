@@ -748,7 +748,7 @@ spec:
         providers:
         - name: dp1
           orgId: 1
-          folder: 'graph-services'
+          folder: 'Infra'
           type: file
           disableDeletion: false
           editable: true
@@ -806,7 +806,7 @@ spec:
     ##     RAW_JSON
     ##
     dashboardsConfigMaps:
-      default: "grafana-dashboard"
+      dp1: "grafana-dashboard"
 
     ## Grafana's primary configuration
     ## NOTE: values in map will be converted to ini format
