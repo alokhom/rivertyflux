@@ -8,3 +8,4 @@ resources:
   - grafana-HelmRepository.yaml
   - grafana-HelmRelease.yaml
   - grafana-secret.yaml
+  - grafana-dashboard.yaml
