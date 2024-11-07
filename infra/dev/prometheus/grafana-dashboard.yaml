@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: grafana-dashboard
-  namespace: premoetheus
+  namespace: prometheus
   labels:
     grafana_dashboard: "true"
 data:
