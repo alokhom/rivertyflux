@@ -1,13 +1,22 @@
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: OCIRepository
+# apiVersion: source.toolkit.fluxcd.io/v1beta2
+# kind: OCIRepository
+# metadata:
+#   name: airflow
+#   namespace: airflow
+# spec:
+#   interval: 10m
+#   layerSelector:
+#     mediaType: "application/vnd.cncf.helm.chart.content.v1.tar+gzip"
+#     operation: copy
+#   url: oci://registry-1.docker.io/bitnamicharts/airflow
+#   ref:
+#     semver: ">= 20.0.0"
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
 metadata:
   name: airflow
   namespace: airflow
 spec:
-  interval: 10m
-  layerSelector:
-    mediaType: "application/vnd.cncf.helm.chart.content.v1.tar+gzip"
-    operation: copy
+  type: "oci"
+  interval: 5m0s
   url: oci://registry-1.docker.io/bitnamicharts/airflow
-  ref:
-    semver: ">= 20.0.0"
