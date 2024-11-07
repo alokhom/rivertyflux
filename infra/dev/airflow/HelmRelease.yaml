@@ -17,7 +17,7 @@ spec:
         kind: HelmRepository
         name: airflow
         namespace: airflow
-      interval: 5m
+      interval: 10m
   values:
     # Copyright Broadcom, Inc. All Rights Reserved.
     # SPDX-License-Identifier: APACHE-2.0
