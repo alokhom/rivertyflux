@@ -8,7 +8,7 @@ spec:
   #   kind: OCIRepository
   #   name: airflow
   #   namespace: airflow
-  # interval: 10m
+  interval: 10m
   chart:
     spec:
       chart: airflow
