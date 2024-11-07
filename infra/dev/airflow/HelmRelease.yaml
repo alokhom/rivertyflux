@@ -5,10 +5,15 @@ metadata:
   namespace: airflow
 spec:
   interval: 30m
-  chartRef:
-    kind: OCIRepository
-    name: airflow
-    namespace: airflow
+  chart:
+    spec:
+      chart: airflow
+      version: "21.5.1"
+      sourceRef:
+        kind: OCIRepository
+        name: airflow
+        namespace: airflow
+      interval: 5m
   values:
     # Copyright Broadcom, Inc. All Rights Reserved.
     # SPDX-License-Identifier: APACHE-2.0
