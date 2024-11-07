@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   - ./pg-helm
   - ./nginx
-  - ./airflow
-  - ./prometheus
+  #- ./airflow
+  #- ./prometheus
