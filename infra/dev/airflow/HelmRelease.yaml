@@ -275,7 +275,8 @@ spec:
       image:
         registry: docker.io
         repository: bitnami/airflow
-        tag: 2.10.2-debian-12-r0
+        tag: latest
+        #tag: 2.10.2-debian-12-r0
         #tag: 2.10.2
         digest: ""
         ## Specify a imagePullPolicy
@@ -621,7 +622,8 @@ spec:
       image:
         registry: docker.io
         repository: bitnami/airflow-scheduler
-        tag: 2.10.2-debian-12-r0
+        tag: latest
+        #tag: 2.10.2-debian-12-r0
         digest: ""
         ## Specify a imagePullPolicy
         ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
@@ -676,6 +678,12 @@ spec:
         timeoutSeconds: 15
         failureThreshold: 6
         successThreshold: 1
+        command:
+          - sh
+          - -c
+          - |
+            CONNECTION_CHECK_MAX_COUNT=0 AIRFLOW__LOGGING__LOGGING_LEVEL=ERROR exec /entrypoint \
+            airflow jobs check --job-type SchedulerJob --hostname $(hostname -i)
       ## @param scheduler.readinessProbe.enabled Enable readinessProbe on Airflow scheduler containers
       ## @param scheduler.readinessProbe.initialDelaySeconds Initial delay seconds for readinessProbe
       ## @param scheduler.readinessProbe.periodSeconds Period seconds for readinessProbe
