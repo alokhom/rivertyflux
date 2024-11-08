@@ -675,7 +675,7 @@ spec:
         enabled: true
         initialDelaySeconds: 180
         periodSeconds: 20
-        timeoutSeconds: 15
+        timeoutSeconds: 150
         failureThreshold: 6
         successThreshold: 1
         command:
@@ -695,7 +695,7 @@ spec:
         enabled: true
         initialDelaySeconds: 30
         periodSeconds: 10
-        timeoutSeconds: 15
+        timeoutSeconds: 150
         failureThreshold: 6
         successThreshold: 1
       ## @param scheduler.startupProbe.enabled Enable startupProbe on Airflow scheduler containers
