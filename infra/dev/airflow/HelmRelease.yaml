@@ -225,6 +225,16 @@ spec:
           ## Path to a folder in the repository containing the dags
           ##
           path: "dags/sample"
+        - repository: "https://github.com/alokhom/dagfiles"
+          ## Branch from repository to checkout
+          ##
+          branch: "main"
+          ## An unique identifier for repository, must be unique for each repository
+          ##
+          name: "yajl_test"
+          ## Path to a folder in the repository containing the dags
+          ##
+          path: "dags/github_archive"
       ## @param dags.sshKey SSH Private key used to clone/sync DAGs from Git repositories (ignored if dags.existingSshKeySecret is set)
       ##
       sshKey: ""
