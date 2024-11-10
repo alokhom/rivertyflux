@@ -654,7 +654,9 @@ spec:
       args: []
       ## @param scheduler.extraEnvVars Add extra environment variables
       ##
-      extraEnvVars: []
+      extraEnvVars:
+      - name: AIRFLOW_WEBSERVER_HOST
+        value: "airflow"
       ## @param scheduler.extraEnvVarsCM ConfigMap with extra environment variables
       ##
       extraEnvVarsCM: ""
