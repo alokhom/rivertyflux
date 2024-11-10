@@ -174,7 +174,7 @@ spec:
     ## ref: http://airflow.apache.org/docs/stable/executor/index.html
     ##
     #executor: CeleryExecutor
-    #executor: KubernetesExecutor
+    executor: KubernetesExecutor
     ## @param loadExamples Switch to load some Airflow examples
     ##
     loadExamples: false
