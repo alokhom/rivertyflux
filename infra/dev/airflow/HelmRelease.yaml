@@ -1373,18 +1373,18 @@ spec:
       ## @param git.plugins.repositories [array] Array of repositories from which to download DAG files
       ##
       plugins:
-        enabled: false
-        repositories: []
-          # - repository: "https://github.com/teamclairvoyant/airflow-rest-api-plugin.git"
+        enabled: true
+        repositories:
+          - repository: "https://github.com/teamclairvoyant/airflow-rest-api-plugin.git"
           #   ## Branch from repository to checkout
           #   ##
-          #   branch: "v1.0.9-branch"
+            branch: "v1.0.9-branch"
           #   ## An unique identifier for repository, must be unique for each repository
           #   ##
-          #   name: "restapi"
+            name: "restapi"
           #   ## Path to a folder in the repository containing the plugins
           #   ##
-          #   path: "plugins"
+            path: "plugins"
       ## Properties for the Clone init container
       ## @param git.clone.command Override cmd
       ## @param git.clone.args Override args
