@@ -94,7 +94,6 @@ spec:
             apache-airflow-providers-common-sql>=1.17.0
             apache-airflow-providers-postgres>=5.13.1
             apache-airflow-providers-cncf-kubernetes>=7.4.0
-            yajl-py>=2.0.2
         kind: ConfigMap
         metadata:
           name: requirements
