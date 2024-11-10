@@ -238,18 +238,18 @@ spec:
     ## @param plugins.repositories [array] Array of repositories from which to download plugins
     ##
     plugins:
-      enabled: true
-      repositories:
-        - repository: "https://github.com/teamclairvoyant/airflow-rest-api-plugin.git"
-        #   ## Branch from repository to checkout
-        #   ##
-          branch: "v1.0.9-branch"
-        #   ## An unique identifier for repository, must be unique for each repository
-        #   ##
-          name: "restapi"
-        #   ## Path to a folder in the repository containing the plugins
-        #   ##
-          path: "plugins"
+      enabled: false
+      repositories: []
+        # - repository: "https://github.com/teamclairvoyant/airflow-rest-api-plugin.git"
+        # #   ## Branch from repository to checkout
+        # #   ##
+        #   branch: "v1.0.9-branch"
+        # #   ## An unique identifier for repository, must be unique for each repository
+        # #   ##
+        #   name: "restapi"
+        # #   ## Path to a folder in the repository containing the plugins
+        # #   ##
+        #   path: "plugins"
       ## E.g:
       ## repositories:
       ##   - repository: https://github.com/myuser/myrepo
