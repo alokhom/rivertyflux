@@ -3043,7 +3043,7 @@ spec:
     ## @param redis.architecture Redis&reg; architecture. Allowed values: `standalone` or `replication`
     ##
     redis:
-      enabled: false
+      enabled: true
       auth:
         enabled: true
         ## Redis&reg; password (both master and slave). Defaults to a random 10-character alphanumeric string if not set and auth.enabled is true.
