@@ -2082,7 +2082,9 @@ spec:
       args: []
       ## @param worker.extraEnvVars Array with extra environment variables to add Airflow worker pods
       ##
-      extraEnvVars: []
+      extraEnvVars:
+        - name: AIRFLOW_WEBSERVER_HOST
+          value: "airflow"
       ## @param worker.extraEnvVarsCM ConfigMap containing extra environment variables for Airflow worker pods
       ##
       extraEnvVarsCM: ""
