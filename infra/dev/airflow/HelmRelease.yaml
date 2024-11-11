@@ -173,7 +173,7 @@ spec:
     ## ref: http://airflow.apache.org/docs/stable/executor/index.html
     ##
     #executor: CeleryExecutor
-    #executor: KubernetesExecutor
+    executor: KubernetesExecutor
     ## @param loadExamples Switch to load some Airflow examples
     ##
     loadExamples: false
@@ -187,7 +187,7 @@ spec:
     configuration: |-
       [core]
       dags_folder=/opt/bitnami/airflow/dags
-      executor = KubernetesExecutor
+
       [metrics]
       # StatsD (https://github.com/etsy/statsd) integration settings.
       # Enables sending metrics to StatsD. Make sure you change the port from 8125 to 9125
