@@ -169,11 +169,11 @@ spec:
       ## The value is evaluated as a template
       ##
       existingSecret: ""
-    ## @param executor Airflow executor. Allowed values: `SequentialExecutor`, `LocalExecutor`, `CeleryExecutor`, `KubernetesExecutor`, `CeleryKubernetesExecutor` and `LocalKubernetesExecutor`
+    ## @param executor Airflow executor. Allowed values: `SequentialExecutor`, `LocalExecutor`, `CeleryExecutor`, `CeleryKubernetesExecutor`, `CeleryCeleryKubernetesExecutor` and `LocalCeleryKubernetesExecutor`
     ## ref: http://airflow.apache.org/docs/stable/executor/index.html
     ##
     #executor: CeleryExecutor
-    #executor: KubernetesExecutor
+    #executor: CeleryKubernetesExecutor
     ## @param loadExamples Switch to load some Airflow examples
     ##
     loadExamples: false
@@ -187,7 +187,7 @@ spec:
     configuration: |-
       [core]
       dags_folder=/opt/bitnami/airflow/dags
-      executor=KubernetesExecutor
+      executor=CeleryKubernetesExecutor
 
       [metrics]
       # StatsD (https://github.com/etsy/statsd) integration settings.
@@ -956,7 +956,7 @@ spec:
       ##
       extraEnvVars:
         - name: AIRFLOW_EXECUTOR
-          value: "KubernetesExecutor"
+          value: "CeleryKubernetesExecutor"
       ## @param scheduler.extraEnvVarsCM ConfigMap with extra environment variables
       ##
       extraEnvVarsCM: ""
@@ -2096,7 +2096,7 @@ spec:
       ##
       extraEnvVars:
         - name: AIRFLOW_EXECUTOR
-          value: "KubernetesExecutor"
+          value: "CeleryKubernetesExecutor"
       ## @param worker.extraEnvVarsCM ConfigMap containing extra environment variables for Airflow worker pods
       ##
       extraEnvVarsCM: ""
@@ -2336,7 +2336,7 @@ spec:
       ## @param worker.extraVolumeClaimTemplates Optionally specify extra list of volumesClaimTemplates for the Airflow worker statefulset
       ##
       extraVolumeClaimTemplates: []
-      ## @param worker.podTemplate Template to replace the default one to be use when `executor=KubernetesExecutor` to create Airflow worker pods
+      ## @param worker.podTemplate Template to replace the default one to be use when `executor=CeleryKubernetesExecutor` to create Airflow worker pods
       ##
       podTemplate: {}
       ## Airflow worker Pod Disruption Budget
