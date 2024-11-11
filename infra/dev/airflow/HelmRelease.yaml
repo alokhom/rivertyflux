@@ -2100,7 +2100,10 @@ spec:
         - name: AIRFLOW__CELERY__BROKER_URL
           value: "redis://airflow-redis-master:6379/0"
         - name: AIRFLOW__CELERY__BROKER_URL_SECRET
-          value: "${REDIS_PASSWORD}"
+          valueFrom:
+            secretKeyRef:
+              name: airflow-redis
+              key: redis-password
       ## @param worker.extraEnvVarsCM ConfigMap containing extra environment variables for Airflow worker pods
       ##
       extraEnvVarsCM: ""
