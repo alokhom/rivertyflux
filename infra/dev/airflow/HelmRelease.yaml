@@ -2098,7 +2098,7 @@ spec:
         - name: AIRFLOW_EXECUTOR
           value: "CeleryKubernetesExecutor"
         - name: AIRFLOW__CELERY__BROKER_URL
-          value: "redis://airflow-redis-master:6379/0"
+          value: "redis://:@airflow-redis-master:6379/0"
         - name: AIRFLOW__CELERY__BROKER_URL_SECRET
           valueFrom:
             secretKeyRef:
