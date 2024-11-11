@@ -198,6 +198,9 @@ spec:
       statsd_prefix = airflow
       metrics_allow_list = scheduler,executor,dagrun,pool,triggerer,celery
 
+      [webserver]
+      web_server_port=8080
+
       [kubernetes_executor]
       namespace=airflow
       worker_container_repository=docker.io/bitnami/airflow
