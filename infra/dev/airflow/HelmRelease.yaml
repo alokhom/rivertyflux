@@ -945,6 +945,8 @@ spec:
       extraEnvVars:
       - name: AIRFLOW_WEBSERVER_HOST
         value: "airflow"
+      - name: AIRFLOW_WEBSERVER_PORT_NUMBER
+        value: '8080'
       ## @param scheduler.extraEnvVarsCM ConfigMap with extra environment variables
       ##
       extraEnvVarsCM: ""
