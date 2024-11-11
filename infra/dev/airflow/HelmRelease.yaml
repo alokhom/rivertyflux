@@ -2095,10 +2095,6 @@ spec:
       ## @param worker.extraEnvVars Array with extra environment variables to add Airflow worker pods
       ##
       extraEnvVars:
-        - name: AIRFLOW_WEBSERVER_HOST
-          value: "airflow"
-        - name: AIRFLOW_WEBSERVER_PORT_NUMBER
-          value: '8080'
         - name: AIRFLOW_EXECUTOR
           value: "KubernetesExecutor"
       ## @param worker.extraEnvVarsCM ConfigMap containing extra environment variables for Airflow worker pods
