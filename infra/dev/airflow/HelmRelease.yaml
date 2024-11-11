@@ -943,10 +943,10 @@ spec:
       ## @param scheduler.extraEnvVars Add extra environment variables
       ##
       extraEnvVars:
-      - name: AIRFLOW_WEBSERVER_HOST
-        value: "airflow"
-      - name: AIRFLOW_WEBSERVER_PORT_NUMBER
-        value: '8080'
+        - name: AIRFLOW_WEBSERVER_HOST
+          value: "airflow"
+        - name: AIRFLOW_WEBSERVER_PORT_NUMBER
+          value: '8080'
       ## @param scheduler.extraEnvVarsCM ConfigMap with extra environment variables
       ##
       extraEnvVarsCM: ""
@@ -2087,6 +2087,8 @@ spec:
       extraEnvVars:
         - name: AIRFLOW_WEBSERVER_HOST
           value: "airflow"
+        - name: AIRFLOW_WEBSERVER_PORT_NUMBER
+          value: '8080'
       ## @param worker.extraEnvVarsCM ConfigMap containing extra environment variables for Airflow worker pods
       ##
       extraEnvVarsCM: ""
