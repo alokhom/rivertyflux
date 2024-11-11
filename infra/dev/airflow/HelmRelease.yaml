@@ -95,7 +95,7 @@ spec:
             apache-airflow-providers-postgres>=5.13.1
             apache-airflow-providers-cncf-kubernetes>=7.4.0
             python-git>=2018.2.1
-            cmake>=3.31.0.1
+            #cmake>=3.31.0.1
         kind: ConfigMap
         metadata:
           name: requirements
