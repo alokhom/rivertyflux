@@ -188,7 +188,7 @@ spec:
     configuration: |-
       [core]
       dags_folder=/opt/bitnami/airflow/dags
-      executor = 'KubernetesExecutor'
+      executor = KubernetesExecutor
       [metrics]
       # StatsD (https://github.com/etsy/statsd) integration settings.
       # Enables sending metrics to StatsD. Make sure you change the port from 8125 to 9125
