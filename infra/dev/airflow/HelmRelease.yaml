@@ -1087,7 +1087,7 @@ spec:
       lifecycleHooks: {}
       ## @param scheduler.automountServiceAccountToken Mount Service Account token in pod
       ##
-      automountServiceAccountToken: false
+      automountServiceAccountToken: true
       ## @param scheduler.hostAliases Deployment pod host aliases
       ## https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/
       ##
@@ -2228,7 +2228,7 @@ spec:
       lifecycleHooks: {}
       ## @param worker.automountServiceAccountToken Mount Service Account token in pod
       ##
-      automountServiceAccountToken: false
+      automountServiceAccountToken: true
       ## @param worker.hostAliases Deployment pod host aliases
       ## https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/
       ##
