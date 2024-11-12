@@ -1048,15 +1048,15 @@ spec:
       resourcesPreset: "xlarge"
       ## @param scheduler.resources Set container requests and limits for different resources like CPU or memory (essential for production workloads)
       ## Example:
-      ## resources:
-      ##   requests:
-      ##     cpu: 2
-      ##     memory: 512Mi
-      ##   limits:
-      ##     cpu: 3
-      ##     memory: 1024Mi
+      resources:
+        requests:
+          cpu: 1
+          memory: 512Mi
+        limits:
+          cpu: 2
+           memory: 1024Mi
       ##
-      resources: {}
+      #resources: {}
       ## Configure Airflow scheduler pods Security Context
       ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
       ## @param scheduler.podSecurityContext.enabled Enabled Airflow scheduler pods' Security Context
