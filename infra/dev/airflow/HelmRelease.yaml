@@ -173,10 +173,10 @@ spec:
     ## ref: http://airflow.apache.org/docs/stable/executor/index.html
     ##
     #executor: CeleryExecutor
-    executor: KubernetesExecutor
+    #executor: KubernetesExecutor
     ## @param loadExamples Switch to load some Airflow examples
     ##
-    loadExamples: false
+    #loadExamples: false
     ## @param configuration Specify content for Airflow config file (auto-generated based on other env. vars otherwise)
     ## e.g:
     ## configuration: |-
@@ -184,30 +184,40 @@ spec:
     ##   dags_folder=/opt/bitnami/airflow/dags
     ##   ...
     ##
-    # configuration: |-
-    #   [core]
-    #   dags_folder=/opt/bitnami/airflow/dags
-    #   executor=KubernetesExecutor
+    configuration: |-
+      [core]
+      load_examples=True
+      dags_folder=/opt/bitnami/airflow/dags
+      executor=KubernetesExecutor
 
-    #   [metrics]
-    #   # StatsD (https://github.com/etsy/statsd) integration settings.
-    #   # Enables sending metrics to StatsD. Make sure you change the port from 8125 to 9125
-    #   statsd_on = True
-    #   statsd_host = statsd-prometheus-statsd-exporter.prometheus
-    #   statsd_port = 9125
-    #   statsd_prefix = airflow
-    #   metrics_allow_list = scheduler,executor,dagrun,pool,triggerer,celery
+      [logging]
+      colored_console_log=True
 
-    #   [webserver]
-    #   web_server_port=8080
+      [scheduler]
+      standalone_dag_processor=True
 
-    #   [kubernetes_executor]
-    #   namespace=airflow
-    #   worker_container_repository=docker.io/bitnami/airflow
-    #   worker_container_tag=2.10.3-debian-12-r1
-    #   delete_worker_pods=True
-    #   delete_worker_pods_on_failure=True
-    #   pod_template_file="/opt/bitnami/airflow/pod_template.yaml"
+      [triggerer]
+      default_capacity=1000
+
+      [metrics]
+      # StatsD (https://github.com/etsy/statsd) integration settings.
+      # Enables sending metrics to StatsD. Make sure you change the port from 8125 to 9125
+      statsd_on = True
+      statsd_host = statsd-prometheus-statsd-exporter.prometheus
+      statsd_port = 9125
+      statsd_prefix = airflow
+      metrics_allow_list = scheduler,executor,dagrun,pool,triggerer
+
+      [webserver]
+      web_server_port=8080
+
+      [kubernetes_executor]
+      namespace=airflow
+      worker_container_repository=docker.io/bitnami/airflow
+      worker_container_tag=2.10.3-debian-12-r1
+      delete_worker_pods=True
+      delete_worker_pods_on_failure=True
+      pod_template_file="/opt/bitnami/airflow/pod_template.yaml"
     ## @param existingConfigmap Name of an existing ConfigMap with the Airflow config file
     ##
     existingConfigmap: ""
@@ -1294,7 +1304,7 @@ spec:
     dagProcessor:
       ## @param dagProcessor.enabled Run Airflow Dag Processor Manager as a standalone component
       ##
-      enabled: false
+      enabled: true
       ## @param dagProcessor.replicaCount Number of Airflow Dag Processor replicas
       ##
       replicaCount: 1
@@ -1635,7 +1645,7 @@ spec:
     triggerer:
       ## @param triggerer.enabled Run Airflow Triggerer as a standalone component
       ##
-      enabled: false
+      enabled: true
       ## @param triggerer.defaultCapacity How many triggers a single Triggerer can run at once
       ##
       defaultCapacity: 1000
