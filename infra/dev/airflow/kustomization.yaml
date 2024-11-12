@@ -7,3 +7,4 @@ resources:
   - secret.yaml
   - db_secret.yaml
   - promex-HelmRelease.yaml
+  - cm-airflow.yaml
