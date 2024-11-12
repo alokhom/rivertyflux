@@ -96,7 +96,7 @@ spec:
             apache-airflow-providers-cncf-kubernetes>=7.4.0
             python-git>=2018.2.1
             wget>=3.2
-            pycopy-gzip>=0.1.1
+            gzip-utils>=2020.7.15
         kind: ConfigMap
         metadata:
           name: requirements
