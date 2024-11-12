@@ -1304,7 +1304,7 @@ spec:
     dagProcessor:
       ## @param dagProcessor.enabled Run Airflow Dag Processor Manager as a standalone component
       ##
-      enabled: true
+      enabled: false
       ## @param dagProcessor.replicaCount Number of Airflow Dag Processor replicas
       ##
       replicaCount: 1

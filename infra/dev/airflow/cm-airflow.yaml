@@ -25,7 +25,7 @@ data:
     colored_console_log=True
 
     [scheduler]
-    standalone_dag_processor=True
+    standalone_dag_processor=False
 
     [triggerer]
     default_capacity=1000
