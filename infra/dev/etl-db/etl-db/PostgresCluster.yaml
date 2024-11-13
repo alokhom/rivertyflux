@@ -5,7 +5,8 @@ metadata:
   namespace: etl-db
 spec:
   # https://github.com/CrunchyData/postgres-operator-examples/blob/main/helm/postgres/values.yaml 
-  postgresVersion: 16
+  postgresVersion: 17
+  image: registry.developers.crunchydata.com/crunchydata/crunchy-postgres:ubi8-17.0-0
   instances:
     - name: instance1
       replicas: 1
@@ -46,6 +47,7 @@ spec:
       databases: [archive]
   backups:
     pgbackrest:
+      image: registry.developers.crunchydata.com/crunchydata/crunchy-pgbackrest:ubi8-2.53.1-0
       global:
         repo1-retention-full: "14"
         repo1-retention-full-type: time
@@ -71,7 +73,8 @@ spec:
               requests:
                 storage: 25Gi
   proxy:
-    pgBouncer: {}
+    pgBouncer:
+      image: registry.developers.crunchydata.com/crunchydata/crunchy-pgbouncer:ubi8-1.23-0
 
 
   databaseInitSQL:
