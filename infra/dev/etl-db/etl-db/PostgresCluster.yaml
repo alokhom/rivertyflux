@@ -41,7 +41,7 @@ spec:
         - "host all postgres 10.0.0.0/8 md5"
   users:
     - name: postgres
-    - name: archive_user
+    - name: archive-user
       databases:
         - archive
       options: 'SUPERUSER'
