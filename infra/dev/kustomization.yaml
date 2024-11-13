@@ -5,3 +5,4 @@ resources:
   - ./nginx
   - ./airflow
   - ./prometheus
+  - ./etl-db
