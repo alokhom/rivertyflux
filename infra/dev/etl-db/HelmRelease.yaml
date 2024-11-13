@@ -27,7 +27,7 @@ spec:
 
     # set if you want to specify a namespace to watch
     # defaults to `.Release.namespace` if left blank
-    watchNamespace: airflow
+    watchNamespace: ''
 
     # set if operator should be deployed in cluster wide mode. defaults to false
     watchAllNamespaces: true
