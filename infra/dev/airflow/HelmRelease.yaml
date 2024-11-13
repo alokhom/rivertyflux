@@ -94,6 +94,7 @@ spec:
             apache-airflow-providers-common-sql>=1.17.0
             apache-airflow-providers-postgres>=5.13.1
             apache-airflow-providers-cncf-kubernetes>=7.4.0
+            apache-airflow-providers-postgres>=5.13.1
             python-git>=2018.2.1
             wget>=3.2
             gzip-utils>=2020.7.15
