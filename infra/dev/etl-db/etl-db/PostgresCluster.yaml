@@ -76,13 +76,6 @@ spec:
   proxy:
     pgBouncer: {}
 
-  patroni:
-    dynamicConfiguration:
-      synchronous_mode: true
-      postgresql:
-        parameters:
-          synchronous_commit: "on"
-
 
   databaseInitSQL:
     name: cluster1-init-sql
