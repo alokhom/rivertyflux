@@ -14,8 +14,8 @@ spec:
         name: percona
         namespace: etl-db
       interval: 10m
-  dependsOn:
-    - name: percona
+  #dependsOn:
+  #  - name: percona
   values:
     # Default values for pg-cluster.
     # This is a YAML-formatted file.
