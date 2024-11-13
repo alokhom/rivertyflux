@@ -32,9 +32,11 @@ spec:
           shared_buffers: 1GB
           work_mem: 2MB
           ssl: "off"
-          password_encryption: "md5"
+          password_encryption: 'scram-sha-256'
         pg_hba:
-        - "hostnossl all all all md5"
+        - hostssl all             all             0.0.0.0/0               scram-sha-256
+        - hostssl replication     replicator      0.0.0.0/0               scram-sha-256
+        - hostssl rewind          rewind          0.0.0.0/0               scram-sha-256
   users:
     - name: postgres
     - name: archive-user
