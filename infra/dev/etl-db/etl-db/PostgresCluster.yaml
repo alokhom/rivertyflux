@@ -34,9 +34,8 @@ spec:
           ssl: "off"
           password_encryption: 'scram-sha-256'
         pg_hba:
-        - hostssl all             all             0.0.0.0/0               scram-sha-256
-        - hostssl replication     replicator      0.0.0.0/0               scram-sha-256
-        - hostssl rewind          rewind          0.0.0.0/0               scram-sha-256
+            - host all all 0.0.0.0/0 scram-sha-256
+            - host replication replicator 127.0.0.1/32 scram-sha-256
   users:
     - name: postgres
     - name: archive-user
