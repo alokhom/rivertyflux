@@ -186,8 +186,10 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: pgo
+  namespace: postgres-operator
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: pgo
+  namespace: postgres-operator

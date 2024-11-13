@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: pgo
+  namespace: postgres-operator
 spec:
   replicas: 1
   strategy: { type: Recreate }
