@@ -1,0 +1,89 @@
+apiVersion: postgres-operator.crunchydata.com/v1beta1
+kind: PostgresCluster
+metadata:
+  name: hippo
+  namespace: etl-db
+spec:
+  # https://github.com/CrunchyData/postgres-operator-examples/blob/main/helm/postgres/values.yaml 
+  postgresVersion: 16
+  instances:
+    - name: instance1
+      replicas: 1
+      dataVolumeClaimSpec:
+        accessModes:
+        - "ReadWriteOnce"
+        resources:
+          requests:
+            storage: 20Gi
+  patroni:
+    # Some values of the Liveness/Readiness probes of the patroni container are calulated using syncPeriodSeconds by the following formulas:
+    # - timeoutSeconds:   syncPeriodSeconds / 2;
+    # - periodSeconds:    syncPeriodSeconds;
+    # - failureThreshold: leaderLeaseDurationSeconds / syncPeriodSeconds.
+    syncPeriodSeconds: 10
+    leaderLeaseDurationSeconds: 30
+    dynamicConfiguration:
+      synchronous_mode: true
+      postgresql:
+        parameters:
+          synchronous_commit: "on"
+          max_parallel_workers: 2
+          max_worker_processes: 2
+          shared_buffers: 1GB
+          work_mem: 2MB
+          ssl: "off"
+          password_encryption: "md5"
+        pg_hba:
+        - "local all all trust"
+        - "host all all 127.0.0.1/32 trust"
+        - "hostnossl all all all md5"
+        - "host all archive_user 10.0.0.0/8 md5"
+        - "host all postgres 10.0.0.0/8 md5"
+  users:
+    - name: postgres
+    - name: archive_user
+      databases:
+        - archive
+      options: 'SUPERUSER'
+    - name: pgbouncer
+      databases: [archive]
+  backups:
+    pgbackrest:
+      global:
+        repo1-retention-full: "14"
+        repo1-retention-full-type: time
+        repo1-path: /pgbackrest/postgres-operator/hippo/repo1
+        repo1-cipher-type: aes-256-cbc
+        repo1-s3-uri-style: path
+      manual:
+        repoName: repo1
+        options:
+        - --type=full
+      repos:
+      - name: repo1
+        schedules:
+          full: "0 0 * * 6"
+          differential: "0 1 * * 1-6"
+          incremental: "0 1 * * 1-6"
+        volume:
+          volumeClaimSpec:
+            storageClassName: "local-path"
+            accessModes:
+            - ReadWriteOnce
+            resources:
+              requests:
+                storage: 25Gi
+  proxy:
+    pgBouncer: {}
+
+  patroni:
+    dynamicConfiguration:
+      synchronous_mode: true
+      postgresql:
+        parameters:
+          synchronous_commit: "on"
+
+
+  databaseInitSQL:
+    name: cluster1-init-sql
+    key: init.sql

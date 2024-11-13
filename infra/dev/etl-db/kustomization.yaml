@@ -1,8 +1,20 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namespace: postgres-operator
+labels:
+- includeSelectors: true
+  pairs:
+    # Note: this label differs from the label set in postgres-operator-examples
+    postgres-operator.crunchydata.com/control-plane: postgres-operator
+
 resources:
   - namespace.yaml
-  - HelmRepository.yaml
-  - HelmRelease.yaml
+  - manager.yaml
   - crd.yaml
+  - rbac.yaml
   - ./etl-db
+
+images:
+- name: postgres-operator
+  newName: registry.developers.crunchydata.com/crunchydata/postgres-operator
+  newTag: latest
