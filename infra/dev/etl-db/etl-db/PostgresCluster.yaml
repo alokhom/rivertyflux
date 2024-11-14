@@ -64,5 +64,5 @@ spec:
 
 
   databaseInitSQL:
-    name: cluster1-init-sql
+    name: hippo-init-sql
     key: init.sql
