@@ -47,7 +47,7 @@ spec:
       databases: [archive]
   backups:
     pgbackrest:
-      image: registry.developers.crunchydata.com/crunchydata/crunchy-pgbackrest:ubi8-2.53.1-0
+      #image: registry.developers.crunchydata.com/crunchydata/crunchy-pgbackrest:ubi8-2.53.1-0
       global:
         repo1-retention-full: "14"
         repo1-retention-full-type: time
@@ -75,7 +75,7 @@ spec:
               - ReadWriteOnce
               resources:
                 requests:
-                  storage: 25Gi
+                  storage: 20Gi
   proxy:
     pgBouncer:
       image: registry.developers.crunchydata.com/crunchydata/crunchy-pgbouncer:ubi8-1.23-0
