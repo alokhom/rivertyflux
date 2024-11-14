@@ -5,7 +5,6 @@ metadata:
   namespace: postgres-operator
 data:
   init.sql: |
-    CREATE ROLE archive_user superuser;
     GRANT ALL PRIVILEGES ON DATABASE archive TO archive_user;
     \c archive postgres
     GRANT ALL ON SCHEMA public TO archive_user;
