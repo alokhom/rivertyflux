@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: cluster1-init-sql
-  namespace: etl-db
+  namespace: postgres-operator
 data:
   init.sql: |
     GRANT ALL PRIVILEGES ON DATABASE archive TO archive_user;

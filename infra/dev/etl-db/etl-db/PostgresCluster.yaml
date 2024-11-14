@@ -2,7 +2,7 @@ apiVersion: postgres-operator.crunchydata.com/v1beta1
 kind: PostgresCluster
 metadata:
   name: hippo
-  namespace: etl-db
+  namespace: postgres-operator
 spec:
   # https://github.com/CrunchyData/postgres-operator-examples/blob/main/helm/postgres/values.yaml 
   postgresVersion: 17
