@@ -51,27 +51,31 @@ spec:
       global:
         repo1-retention-full: "14"
         repo1-retention-full-type: time
-        repo1-path: /pgbackrest/postgres-operator/hippo/repo1
-        repo1-cipher-type: aes-256-cbc
-        repo1-s3-uri-style: path
+        repo1-path: /var/lib/pgbackrest/hippo/repo1
+        #repo1-cipher-type: aes-256-cbc
+        #repo1-s3-uri-style: path
       manual:
         repoName: repo1
         options:
         - --type=full
+        - '--compress-level=6'
+        - '--start-fast=y'
+        - '--process-max=20'
+        - '--log-level-console=info'
       repos:
-      - name: repo1
-        schedules:
-          full: "0 0 * * 6"
-          differential: "0 1 * * 1-6"
-          incremental: "0 1 * * 1-6"
-        volume:
-          volumeClaimSpec:
-            storageClassName: "local-path"
-            accessModes:
-            - ReadWriteOnce
-            resources:
-              requests:
-                storage: 25Gi
+        - name: repo1
+          schedules:
+            full: "0 0 * * 6"
+            # differential: "0 1 * * 1-6"
+            incremental: "0 1 * * 1-6"
+          volume:
+            volumeClaimSpec:
+              storageClassName: "local-path"
+              accessModes:
+              - ReadWriteOnce
+              resources:
+                requests:
+                  storage: 25Gi
   proxy:
     pgBouncer:
       image: registry.developers.crunchydata.com/crunchydata/crunchy-pgbouncer:ubi8-1.23-0
