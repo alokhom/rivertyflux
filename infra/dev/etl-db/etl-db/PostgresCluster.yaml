@@ -47,17 +47,27 @@ spec:
       databases: [archive]
   backups:
     pgbackrest:
-      #image: registry.developers.crunchydata.com/crunchydata/crunchy-pgbackrest:ubi8-2.53.1-0
+      image: registry.developers.crunchydata.com/crunchydata/crunchy-pgbackrest:ubi8-2.53.1-0
       global:
         repo1-retention-full: "14"
         repo1-retention-full-type: time
         repo1-path: /pgdata/pgbackrest/hippo/repo1
-        #repo1-cipher-type: aes-256-cbc
-        #repo1-s3-uri-style: path
-      # manual:
-      #   repoName: repo1
-      #   options:
-      #   - --type=full
+        repo1-cipher-type: aes-256-cbc
+        repo1-s3-uri-style: path
+      repoHost:
+        affinity:
+          podAntiAffinity:
+            preferredDuringSchedulingIgnoredDuringExecution:
+             - weight: 1
+               podAffinityTerm:
+                 labelSelector:
+                   matchLabels:
+                     postgres-operator.crunchydata.com/data: pgbackrest
+                 topologyKey: kubernetes.io/hostname
+      manual:
+        repoName: repo1
+        options:
+        - --type=full
       #   - '--compress-level=6'
       #   - '--start-fast=y'
       #   - '--process-max=20'
@@ -67,7 +77,7 @@ spec:
           schedules:
             full: "0 0 * * 6"
             # differential: "0 1 * * 1-6"
-            incremental: "0 1 * * 1-6"
+            # incremental: "0 1 * * 1-6"
           volume:
             volumeClaimSpec:
               storageClassName: "local-path"
