@@ -550,6 +550,8 @@ spec:
       value: "public"
     - name: AIRFLOW__CORE__TEST_CONNECTION
       value: Enabled
+    - name: AIRFLOW__KUBERNETES__DELETE_WORKER_PODS 
+      value: "true"
     ## @param extraEnvVarsCM ConfigMap with extra environment variables for all the Airflow pods
     ##
     extraEnvVarsCM: ""
