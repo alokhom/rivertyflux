@@ -52,16 +52,16 @@ spec:
         repo1-retention-full: "14"
         repo1-retention-full-type: time
         repo1-path: /mnt/demo-backups
-        #repo1-cipher-type: aes-256-cbc
-        #repo1-s3-uri-style: path
-      manual:
-        repoName: repo1
-        options:
-        - --type=full
-        - '--compress-level=6'
-        - '--start-fast=y'
-        - '--process-max=20'
-        - '--log-level-console=info'
+        repo1-cipher-type: aes-256-cbc
+        repo1-s3-uri-style: path
+      # manual:
+      #   repoName: repo1
+      #   options:
+      #   - --type=full
+      #   - '--compress-level=6'
+      #   - '--start-fast=y'
+      #   - '--process-max=20'
+      #   - '--log-level-console=info'
       repos:
         - name: repo1
           schedules:
