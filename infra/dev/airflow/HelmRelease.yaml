@@ -548,6 +548,8 @@ spec:
       value: "alok.hom@gmail.com"
     - name: AIRFLOW__DATABASE__SQL_ALCHEMY_SCHEMA
       value: "public"
+    - name: AIRFLOW__CORE__TEST_CONNECTION
+      value: Enabled
     ## @param extraEnvVarsCM ConfigMap with extra environment variables for all the Airflow pods
     ##
     extraEnvVarsCM: ""
