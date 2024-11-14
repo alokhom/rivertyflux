@@ -1252,8 +1252,8 @@ spec:
           enabled: true
           minReplicas: "1"
           maxReplicas: "3"
-          targetCPU: "3"
-          targetMemory: "8Gi"
+          targetCPU: "80"
+          targetMemory: "80"
       ## Scheduler Network Policies
       ## Ref: https://kubernetes.io/docs/concepts/services-networking/network-policies/
       ##
@@ -2390,8 +2390,8 @@ spec:
         enabled: true
         minReplicas: 1
         maxReplicas: 3
-        targetCPU: 80
-        targetMemory: 80
+        targetCPU: 3
+        targetMemory: 8
         ## @param worker.autoscaling.vpa.enabled Enable VPA for Airflow Worker
         ## @param worker.autoscaling.vpa.annotations Annotations for VPA resource
         ## @param worker.autoscaling.vpa.controlledResources List of resources that the VPA can control. Defaults to cpu and memory
