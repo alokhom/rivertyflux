@@ -1249,11 +1249,11 @@ spec:
         ## @param scheduler.autoscaling.hpa.targetMemory Target Memory utilization percentage
         ##
         hpa:
-          enabled: false
-          minReplicas: ""
-          maxReplicas: ""
-          targetCPU: ""
-          targetMemory: ""
+          enabled: true
+          minReplicas: "1"
+          maxReplicas: "3"
+          targetCPU: "3"
+          targetMemory: "8Gi"
       ## Scheduler Network Policies
       ## Ref: https://kubernetes.io/docs/concepts/services-networking/network-policies/
       ##
