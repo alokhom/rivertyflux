@@ -108,7 +108,7 @@ spec:
     ## Distributed MinIO ref: https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html
     ##
     rootUser: "rootuser"
-    rootPassword: "rootpass123 "
+    rootPassword: "rootpass123"
 
     ## Use existing Secret that store following variables:
     ##
