@@ -10,5 +10,5 @@ resources:
   - grafana-secret.yaml
   - grafana-dashboard.yaml
   #- grafana-loki-HelmRelease.yaml
-  - minio-HelmRelease.yaml
+  #- minio-HelmRelease.yaml
   - minio-HelmRepository.yaml
