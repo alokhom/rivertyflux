@@ -1032,7 +1032,7 @@ spec:
     # If you enable this, make sure to disable the gateway.
     # You'll need to supply authn configuration for your ingress controller.
     ingress:
-      enabled: true
+      enabled: false
       ingressClassName: nginx
       annotations: {}
     #    nginx.ingress.kubernetes.io/auth-type: basic
@@ -1054,6 +1054,10 @@ spec:
           - /loki/api/v1/rules
           - /prometheus/api/v1/rules
           - /prometheus/api/v1/alerts
+
+      # pathType is only for k8s >= 1.1=
+      pathType: Prefix
+
       hosts:
         - loki.example.com
       # tls:
