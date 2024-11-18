@@ -1062,8 +1062,8 @@ spec:
           cpu: 1
           memory: 2Gi
         limits:
-          cpu: 2
-          memory: 6Gi
+          cpu: 1
+          memory: 4Gi
       ##
       #resources: {}
       ## Configure Airflow scheduler pods Security Context
