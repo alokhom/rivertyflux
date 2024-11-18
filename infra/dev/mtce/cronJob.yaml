@@ -12,6 +12,7 @@ spec:
       template:
         serviceAccountName: pod-manager
         spec:
+          automountServiceAccountToken: true
           containers:
           - name: hello
             image: bitnami/kubectl
