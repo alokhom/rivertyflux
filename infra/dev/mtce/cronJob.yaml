@@ -10,7 +10,7 @@ spec:
   jobTemplate:
     spec:
       template:
-        serviceAccountName: pod-manager
+        serviceAccountName: default
         spec:
           automountServiceAccountToken: true
           containers:
