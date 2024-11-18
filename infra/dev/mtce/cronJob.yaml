@@ -10,8 +10,8 @@ spec:
   jobTemplate:
     spec:
       template:
-        serviceAccountName: pod-manager
         spec:
+          serviceAccountName: pod-manager
           automountServiceAccountToken: true
           containers:
           - name: hello
