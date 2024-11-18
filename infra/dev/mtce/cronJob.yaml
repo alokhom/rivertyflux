@@ -29,7 +29,7 @@ spec:
                 # been evicted, sort by the startTime (ascending), then 
                 # select all but the most recent 3.  Then pass just the 
                 # names of those Pods to kubectl to be deleted
-                kubectl -n ${namespace} get pod -o=json | jq '[.items[] | select(.status.reason=="Evicted")] | jq -r '.[] .metadata.name' | xargs --no-run-if-empty kubectl -n ${namespace} delete pod
+                kubectl -n ${namespace} get pod -o=json | jq '[.items[] | select(.status.reason=="Evicted")]' | jq -r '.[] .metadata.name' | xargs --no-run-if-empty kubectl -n ${namespace} delete pod
               done
           restartPolicy: Never
       backoffLimit: 0  
