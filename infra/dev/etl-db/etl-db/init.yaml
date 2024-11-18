@@ -10,3 +10,4 @@ data:
     \c archive postgres
     GRANT ALL ON SCHEMA public TO archive-user;
     GRANT ALL ON SCHEMA public TO pgbouncer;
+    create schema json_demo;
