@@ -2657,10 +2657,9 @@ spec:
         service.istio.io/canonical-revision: latest
         sidecar.istio.io/inject: 'false'
     spec:
-      affinity:
-        nodeAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-          requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelector:
+        kubernetes.io/os: linux
+        kubernetes.io/hostname: orangepi
       containers:
       - args:
         - proxy
@@ -2869,6 +2868,9 @@ spec:
         operator.istio.io/component: Pilot
         sidecar.istio.io/inject: 'false'
     spec:
+      nodeSelector:
+        kubernetes.io/os: linux
+        kubernetes.io/hostname: orangepi
       containers:
       - args:
         - discovery
