@@ -70,10 +70,10 @@ resources:
 - ./common/istio-1-23/kubeflow-istio-resources/base
 
 
-# # Kubeflow Pipelines
-# - ../apps/pipeline/upstream/env/cert-manager/platform-agnostic-multi-user
-# # Katib
-# - ../apps/katib/upstream/installs/katib-with-kubeflow
+# Kubeflow Pipelines
+- ../apps/pipeline/upstream/env/cert-manager/platform-agnostic-multi-user
+# Katib
+- ../apps/katib/upstream/installs/katib-with-kubeflow
 # # Central Dashboard
 # - ../apps/centraldashboard/overlays/oauth2-proxy
 # # Admission Webhook
