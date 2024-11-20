@@ -111,7 +111,7 @@ resources:
 # Ray does not support Istio yet and integration is in alpha state.
 # Here is the documentation for Ray: https://docs.ray.io/en/latest/
 # Here is the internal documentation for Ray: - ../contrib/ray/README.md
-# - ../contrib/ray/kuberay-operator/overlays/kubeflow
+- ./contrib/ray/kuberay-operator/overlays/kubeflow
 #
 # Seldon integration notes: Seldon may have specific requirements and limitations.
 # Documentation for Seldon: https://docs.seldon.io/projects/seldon-core/en/latest/
