@@ -827,6 +827,7 @@ spec:
             enabled: false
           nodeSelector:
             kubernetes.io/os: linux
+            kubernetes.io/hostname: dietpi
           tolerations: []
           # -- Labels to be added to patch job resources
           labels: {}
