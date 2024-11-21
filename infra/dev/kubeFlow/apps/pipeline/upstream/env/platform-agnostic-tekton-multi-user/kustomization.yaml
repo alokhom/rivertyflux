@@ -22,6 +22,8 @@ patches:
     spec:
       template:
         spec:
+          nodeSelector:
+            kubernetes.io/hostname: amd5
           containers:
             - name: ml-pipeline-api-server
               env:
@@ -35,6 +37,8 @@ patches:
     spec:
       template:
         spec:
+          nodeSelector:
+            kubernetes.io/hostname: amd5
           containers:
             - name: ml-pipeline-persistenceagent
               env:
@@ -48,6 +52,8 @@ patches:
     spec:
       template:
         spec:
+          nodeSelector:
+            kubernetes.io/hostname: amd5
           containers:
             - name: ml-pipeline-scheduledworkflow
               env:
@@ -61,6 +67,8 @@ patches:
     spec:
       template:
         spec:
+          nodeSelector:
+            kubernetes.io/hostname: amd5
           containers:
             - name: ml-pipeline-ui
               env:
