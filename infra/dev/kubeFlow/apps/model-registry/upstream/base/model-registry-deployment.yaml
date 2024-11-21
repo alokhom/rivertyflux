@@ -16,6 +16,8 @@ spec:
       labels:
         component: model-registry-server
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: amd5
       containers:
         - name: rest-container
           args:
