@@ -16,7 +16,9 @@ spec:
       labels:
         app: mysql
     spec:
-      automountServiceAccountToken: false
+      automountServiceAccountToken: true
+      nodeSelector:
+        kubernetes.io/hostname: amd5
       containers:
         - name: main
           image: mysql:8
@@ -36,5 +38,3 @@ spec:
               port: 3306
             initialDelaySeconds: 30
             periodSeconds: 10
-      nodeSelector:
-        kubernetes.io/os: linux
