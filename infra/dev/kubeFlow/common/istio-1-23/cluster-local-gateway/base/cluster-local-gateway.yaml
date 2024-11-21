@@ -53,6 +53,8 @@ spec:
         service.istio.io/canonical-revision: latest
         sidecar.istio.io/inject: 'false'
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: amd5
       affinity:
         nodeAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
