@@ -16,6 +16,8 @@ spec:
       labels:
         app: cache-deployer
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: amd5
       containers:
       - name: main
         image: gcr.io/ml-pipeline/cache-deployer:dummy

@@ -20,6 +20,8 @@ spec:
       annotations:
         sidecar.istio.io/inject: "false"
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: amd5
       containers:
         - name: katib-postgres
           image: postgres:14.5-alpine
