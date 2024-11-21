@@ -15,6 +15,8 @@ spec:
       labels:
         app: mysql
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: amd5
       serviceAccountName: mysql
       containers:
       - args:
@@ -48,8 +50,8 @@ spec:
         env:
         - name: MYSQL_ALLOW_EMPTY_PASSWORD
           value: "true"
-        #image: gcr.io/ml-pipeline/mysql:8.0.26
-        image: mysql:latest
+        image: gcr.io/ml-pipeline/mysql:8.0.26
+        # image: mysql:latest
         name: mysql
         ports:
         - containerPort: 3306
