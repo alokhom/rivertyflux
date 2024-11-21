@@ -15,8 +15,8 @@ spec:
       labels:
         app: mysql
     spec:
-      nodeSelector:
-        beta.kubernetes.io/arch: amd64
+      #nodeSelector:
+      #  beta.kubernetes.io/arch: amd64
       serviceAccountName: mysql
       containers:
       # - args:
