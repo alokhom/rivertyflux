@@ -16,7 +16,7 @@ spec:
       labels:
         app: mysql
     spec:
-      automountServiceAccountToken: true
+      automountServiceAccountToken: false
       nodeSelector:
         kubernetes.io/hostname: amd5
       containers:
