@@ -16,7 +16,7 @@ spec:
         app: mysql
     spec:
       nodeSelector:
-        kubernetes.io/hostname: amd5
+        kubernetes.io/hostname: dietpi
       serviceAccountName: mysql
       containers:
       - args:
