@@ -6,7 +6,7 @@ spec:
   gateways:
   - kubeflow-gateway
   hosts:
-  - 'centraldashboard.systemtracker.no-ip.org'
+  - '*'
   http:
   - match:
     - uri:
