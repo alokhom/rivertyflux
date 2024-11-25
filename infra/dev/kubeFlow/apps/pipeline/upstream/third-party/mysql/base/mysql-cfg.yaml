@@ -7,3 +7,4 @@ metadata:
 data:
   init.sql: |
     CREATE USER 'kubeflow'@'%' IDENTIFIED WITH mysql_native_password BY 'password';
+    ALTER USER 'root'@'%' IDENTIFIED WITH caching_sha2_password BY 'password';
