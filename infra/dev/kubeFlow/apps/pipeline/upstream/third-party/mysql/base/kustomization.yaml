@@ -7,3 +7,4 @@ resources:
 - mysql-pv-claim.yaml
 - mysql-service.yaml
 - mysql-serviceaccount.yaml
+- mysql-cfg.yaml
