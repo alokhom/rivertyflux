@@ -98,8 +98,8 @@ resources:
 - ./common/user-namespace/base
 
 # # KServe
-# - ./contrib/kserve/kserve
-# - ./contrib/kserve/models-web-app/overlays/kubeflow
+- ./contrib/kserve/kserve
+- ./contrib/kserve/models-web-app/overlays/kubeflow
 
 
 
