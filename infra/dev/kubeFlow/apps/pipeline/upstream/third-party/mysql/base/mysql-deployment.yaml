@@ -47,13 +47,13 @@ spec:
         # Disable binlog as the logs grow fast and eat up all disk spaces eventually. And KFP doesn't currently utilize binlog.
         # https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#option_mysqld_log-bin
         - --disable-log-bin
-        env:
-        - name: MYSQL_ALLOW_EMPTY_PASSWORD
-          value: "true"
-        # - name: MYSQL_ROOT_PASSWORD
-        #   value: password
-        image: gcr.io/ml-pipeline/mysql:8.0.26
-        #image: mysql:latest
+      - env:
+        # - name: MYSQL_ALLOW_EMPTY_PASSWORD
+        #   value: "true"
+        - name: MYSQL_ROOT_PASSWORD
+          value: password
+        #image: gcr.io/ml-pipeline/mysql:8.0.26
+        image: mysql:8
         name: mysql
         ports:
         - containerPort: 3306
