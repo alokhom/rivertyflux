@@ -15,7 +15,7 @@ spec:
         component: metadata-grpc-server
     spec:
       nodeSelector:
-        kubernetes.io/hostname: dietpi
+        kubernetes.io/hostname: amd5
       containers:
       - name: container
         # ! Sync to the same MLMD version:
