@@ -15,8 +15,8 @@ spec:
       labels:
         app: minio
     spec:
-      # nodeSelector:
-      #   kubernetes.io/hostname: amd5
+      nodeSelector:
+        kubernetes.io/hostname: amd5
       containers:
       - args:
         - server
