@@ -10,8 +10,8 @@ spec:
     istio: ingressgateway
   servers:
   - port:
-      number: 90
+      number: 80
       name: http
       protocol: HTTP
     hosts:
-    - 'cd.systemtracker.no-ip.org'
+    - '*'
