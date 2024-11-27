@@ -6,6 +6,8 @@ metadata:
 spec:
   template:
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: amd5
       containers:
       - name: ml-pipeline-visualizationserver
         securityContext:
