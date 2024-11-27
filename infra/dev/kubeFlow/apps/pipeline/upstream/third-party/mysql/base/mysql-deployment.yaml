@@ -50,8 +50,8 @@ spec:
         env:
         - name: MYSQL_ALLOW_EMPTY_PASSWORD
           value: "true"
-        - name: MYSQL_ROOT_PASSWORD
-         value: password
+        # - name: MYSQL_ROOT_PASSWORD
+        #  value: password
         image: gcr.io/ml-pipeline/mysql:8.0.26
         #image: mysql:8
         name: mysql
