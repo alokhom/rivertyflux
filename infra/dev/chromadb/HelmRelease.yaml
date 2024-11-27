@@ -164,5 +164,5 @@ spec:
         name: "db-data"
         labels: {}
         annotations: {}
-        storageClassName: "local-apath"
+        storageClassName: "local-path"
         size: "2Gi"
