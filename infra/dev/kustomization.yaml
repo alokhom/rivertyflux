@@ -9,3 +9,4 @@ resources:
   - ./mtce
   - ./kubeFlow
   - ./chromadb
+  - ./longhorn
