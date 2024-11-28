@@ -22,7 +22,8 @@ spec:
       # -- Toleration for nodes allowed to run user-deployed components such as Longhorn Manager, Longhorn UI, and Longhorn Driver Deployer.
       tolerations: []
       # -- Node selector for nodes allowed to run user-deployed components such as Longhorn Manager, Longhorn UI, and Longhorn Driver Deployer.
-      nodeSelector: {}
+      nodeSelector:
+        kubernetes.io/hostname: amd5
       cattle:
         # -- Default system registry.
         systemDefaultRegistry: ""
