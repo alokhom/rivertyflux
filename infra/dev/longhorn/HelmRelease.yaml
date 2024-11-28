@@ -450,7 +450,7 @@ spec:
       ingressClassName: nginx
 
       # -- Hostname of the Layer 7 load balancer.
-      host: sslip.io
+      host: longhorn.local
 
       # -- Setting that allows you to enable TLS on ingress records.
       tls: false
