@@ -279,7 +279,8 @@ spec:
     ## Node labels for pod assignment
     ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
     ##
-    nodeSelector: {}
+    nodeSelector:
+      kubernetes.io/hostname: amd5
     tolerations: []
     affinity: {}
     topologySpreadConstraints: []
