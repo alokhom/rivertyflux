@@ -613,9 +613,9 @@ spec:
         # -- type of authentication to use for S3 buckets, can either be iam or accesskey
         authType: accesskey
         # -- AWS IAM user access key ID to use for S3 bucket auth, only used if authType is set to accesskey
-        accessKey: ""
+        accessKey: "poucO2WOQ1yaXeGNRntT"
         # -- AWS IAM user secret access key to use for S3 bucket auth, only used if authType is set to accesskey
-        secretKey: ""
+        secretKey: "vO1D06454tYr24OCHEwxrVFfHKJc7TyUTToLErIj"
       # -- settings for storage type gcs
       gcs:
       # -- GCP project ID. Required for storage type gcs.
