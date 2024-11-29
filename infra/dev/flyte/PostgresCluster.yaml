@@ -1,0 +1,71 @@
+apiVersion: postgres-operator.crunchydata.com/v1beta1
+kind: PostgresCluster
+metadata:
+  name: flytepg
+  namespace: flyte-core
+spec:
+  # https://github.com/CrunchyData/postgres-operator-examples/blob/main/helm/postgres/values.yaml 
+  postgresVersion: 17
+  image: registry.developers.crunchydata.com/crunchydata/crunchy-postgres:ubi8-17.0-0
+  instances:
+    - name: instance1
+      replicas: 1
+      dataVolumeClaimSpec:
+        accessModes:
+        - "ReadWriteOnce"
+        resources:
+          requests:
+            storage: 20Gi
+  patroni:
+    # Some values of the Liveness/Readiness probes of the patroni container are calulated using syncPeriodSeconds by the following formulas:
+    # - timeoutSeconds:   syncPeriodSeconds / 2;
+    # - periodSeconds:    syncPeriodSeconds;
+    # - failureThreshold: leaderLeaseDurationSeconds / syncPeriodSeconds.
+    syncPeriodSeconds: 10
+    leaderLeaseDurationSeconds: 30
+    dynamicConfiguration:
+      synchronous_mode: true
+      postgresql:
+        parameters:
+          synchronous_commit: "on"
+          max_parallel_workers: 2
+          max_worker_processes: 2
+          shared_buffers: 1GB
+          work_mem: 2MB
+          ssl: "off"
+          password_encryption: 'scram-sha-256'
+        pg_hba:
+            - host all all 0.0.0.0/0 scram-sha-256
+            - host replication replicator 127.0.0.1/32 scram-sha-256
+  users:
+    - name: postgres
+    - name: flytepg-user
+      databases:
+        - flytepg
+        - flyteadmin
+      options: 'CREATEDB CREATEROLE'
+    - name: pgbouncer
+      databases:
+        - flytepg
+        - flyteadmin
+  backups:
+    pgbackrest:
+      image: registry.developers.crunchydata.com/crunchydata/crunchy-pgbackrest:ubi8-2.53.1-0
+      repos:
+        - name: repo1
+          volume:
+            volumeClaimSpec:
+              storageClassName: "local-path"
+              accessModes:
+              - ReadWriteOnce
+              resources:
+                requests:
+                  storage: 20Gi
+  proxy:
+    pgBouncer:
+      image: registry.developers.crunchydata.com/crunchydata/crunchy-pgbouncer:ubi8-1.23-0
+
+
+  databaseInitSQL:
+    name: flytepg-init-sql
+    key: init.sql

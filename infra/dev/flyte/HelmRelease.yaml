@@ -636,14 +636,14 @@ spec:
       datacatalog:
         database:
           port: 5432
-          username: postgres
-          host: postgres
-          dbname: "datacatalog"
+          username: pgbouncer
+          host: flytepg-pgbouncer.flyte-core.svc
+          dbname: "flytepg"
       admin:
         database:
           port: 5432
-          username: postgres
-          host: postgres
+          username: pgbouncer
+          host: flytepg-pgbouncer.flyte-core.svc
           dbname: "flyteadmin"
     # --------------------------------------------------------------------
     # Specializing your deployment using configuration
@@ -831,7 +831,7 @@ spec:
           pod-template-name: "flytepropeller-template"
         # -- follows the structure specified [here](https://pkg.go.dev/github.com/flyteorg/flytepropeller/pkg/controller/config).
         propeller:
-          rawoutput-prefix: s3://my-s3-bucket/
+          rawoutput-prefix: s3://flyte-bucket/
           metadata-prefix: metadata/propeller
           workers: 4
           max-workflow-retries: 30
