@@ -280,7 +280,7 @@ spec:
     ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
     ##
     nodeSelector:
-      kubernetes.io/hostname: amd5
+      kubernetes.io/hostname: orangepi
     tolerations: []
     affinity: {}
     topologySpreadConstraints: []
