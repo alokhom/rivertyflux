@@ -644,12 +644,14 @@ spec:
           username: pgbouncer
           host: flytepg-pgbouncer.flyte-core.svc
           dbname: "flytepg"
+          password: "nW{r9<4.}RNZ|6K,5>|r@.[U"
       admin:
         database:
           port: 5432
           username: pgbouncer
           host: flytepg-pgbouncer.flyte-core.svc
           dbname: "flyteadmin"
+          password: "nW{r9<4.}RNZ|6K,5>|r@.[U"
     # --------------------------------------------------------------------
     # Specializing your deployment using configuration
     # -------------------------------------------------------------------
