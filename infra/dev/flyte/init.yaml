@@ -7,7 +7,11 @@ data:
   init.sql: |
     GRANT ALL PRIVILEGES ON DATABASE flytepg TO flytepg-user;
     GRANT ALL PRIVILEGES ON DATABASE flytepg TO pgbouncer;
+    GRANT ALL PRIVILEGES ON DATABASE flyteadmin TO flytepg-user;
+    GRANT ALL PRIVILEGES ON DATABASE flyteadmin TO pgbouncer;
     \c flytepg postgres
     GRANT ALL ON SCHEMA public TO flytepg-user;
     GRANT ALL ON SCHEMA public TO pgbouncer;
-    create schema json_demo;
+    \c flyteadmin postgres
+    GRANT ALL ON SCHEMA public TO flytepg-user;
+    GRANT ALL ON SCHEMA public TO pgbouncer;
