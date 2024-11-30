@@ -193,7 +193,8 @@ spec:
       # -- Labels for Flytescheduler pods
       podLabels: {}
       # -- nodeSelector for Flytescheduler deployment
-      nodeSelector: {}
+      nodeSelector:
+        kubernetes.io/hostname: dietpi
       # -- tolerations for Flytescheduler deployment
       tolerations: []
       # -- affinity for Flytescheduler deployment
@@ -265,7 +266,8 @@ spec:
       # -- Labels for Datacatalog pods
       podLabels: {}
       # -- nodeSelector for Datacatalog deployment
-      nodeSelector: {}
+      nodeSelector:
+        kubernetes.io/hostname: dietpi
       # -- tolerations for Datacatalog deployment
       tolerations: []
       # -- affinity for Datacatalog deployment
@@ -357,7 +359,8 @@ spec:
       # -- Labels for Flytepropeller pods
       podLabels: {}
       # -- nodeSelector for Flytepropeller deployment
-      nodeSelector: {}
+      nodeSelector:
+        kubernetes.io/hostname: dietpi
       # -- tolerations for Flytepropeller deployment
       tolerations: []
       # -- affinity for Flytepropeller deployment
@@ -434,7 +437,8 @@ spec:
       # -- Labels for Flyteconsole pods
       podLabels: {}
       # -- nodeSelector for Flyteconsole deployment
-      nodeSelector: {}
+      nodeSelector:
+        kubernetes.io/hostname: dietpi
       # -- tolerations for Flyteconsole deployment
       tolerations: []
       # -- affinity for Flyteconsole deployment
@@ -518,7 +522,8 @@ spec:
       # -- Labels for webhook pods
       podLabels: {}
       # -- nodeSelector for webhook deployment
-      nodeSelector: {}
+      nodeSelector:
+        kubernetes.io/hostname: dietpi
       # -- Sets securityContext for webhook pod(s).
       securityContext:
         fsGroup: 65534
@@ -989,7 +994,8 @@ spec:
       # -- Labels for ClusterResource pods
       podLabels: {}
       # -- nodeSelector for ClusterResource deployment
-      nodeSelector: {}
+      nodeSelector:
+        kubernetes.io/hostname: dietpi
       # -- Resources for ClusterResource deployment
       resources: {}
       # -- Configmap for ClusterResource parameters
