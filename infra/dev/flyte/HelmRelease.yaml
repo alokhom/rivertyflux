@@ -115,7 +115,7 @@ spec:
       podLabels: {}
       # -- nodeSelector for Flyteadmin deployment
       nodeSelector:
-        kubernetes.io/hostname: amd5
+        kubernetes.io/hostname: dietpi
       # -- tolerations for Flyteadmin deployment
       tolerations: []
       # -- affinity for Flyteadmin deployment
