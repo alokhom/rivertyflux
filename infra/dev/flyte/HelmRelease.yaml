@@ -644,6 +644,7 @@ spec:
           username: pgbouncer
           host: flytepg-pgbouncer.flyte-core.svc
           dbname: "flytepg"
+          options: sslmode=prefer
           password: "nW{r9<4.}RNZ|6K,5>|r@.[U"
       admin:
         database:
@@ -651,6 +652,7 @@ spec:
           username: pgbouncer
           host: flytepg-pgbouncer.flyte-core.svc
           dbname: "flyteadmin"
+          options: sslmode=prefer
           password: "nW{r9<4.}RNZ|6K,5>|r@.[U"
     # --------------------------------------------------------------------
     # Specializing your deployment using configuration
