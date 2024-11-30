@@ -10,4 +10,4 @@ resources:
   #- ./kubeFlow
   - ./chromadb
   - ./longhorn
-  #- ./flyte
+  - ./flyte
