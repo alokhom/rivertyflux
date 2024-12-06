@@ -5,7 +5,7 @@ metadata:
   namespace: py-app
 spec:
   selector:
-    app.kubernetes.io/name: py-app
+    app: py-app
   ports:
     - protocol: TCP
       port: 5000
