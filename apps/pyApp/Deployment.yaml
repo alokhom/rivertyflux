@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pyApp
+  namespace: py-app
+  labels:
+    app: pyApp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pyApp
+  template:
+    metadata:
+      labels:
+        app: pyApp
+    spec:
+      containers:
+      - name: pyApp
+        image: alokhom/python-docker:latest
+        ports:
+        - containerPort: 5000
