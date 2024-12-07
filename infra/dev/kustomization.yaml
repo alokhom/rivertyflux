@@ -11,3 +11,4 @@ resources:
   - ./chromadb
   - ./longhorn
   - ./flyte
+  - ./sqllite3
