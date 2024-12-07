@@ -542,10 +542,10 @@ spec:
       #
       # rqlite does not currently support dynamically reloading of this file when it changes
       # on disk, so you will need to do a rolling restart after updating.
-      users: []
-      #  - username: myapp
-      #    password: 9uyYgs2NugvpSrEcZCmsu4mYdm1FBPZ9
-      #    perms: [execute, query]
+      users:
+       - username: myapp
+         password: 9uyYgs2NugvpSrEcZCmsu4mYdm1FBPZ9
+         perms: [execute, query]
 
       # This section configures rqlite's automatic backup/restore functionality, which supports
       # S3-compatible cloud storage providers.
