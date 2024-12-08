@@ -78,6 +78,7 @@ spec:
       # -- Will add custom headers before sending response traffic to the client according to: https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#add-headers
       addHeaders:
         use-proxy-protocol: "true"
+        hsts: "false"
       # -- Optionally customize the pod dnsConfig.
       dnsConfig: {}
       # -- Optionally customize the pod hostAliases.
