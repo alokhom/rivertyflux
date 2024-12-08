@@ -4,7 +4,7 @@ metadata:
   name: py-app
   namespace: py-app
   annotations:
-    cert-manager.io/issuer: "ca-issuer"
+    cert-manager.io/cluster-issuer: "ca-issuer"
 spec:
   ingressClassName: nginx
   tls:
