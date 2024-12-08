@@ -19,12 +19,12 @@ spec:
       logLevel: 4
     nodeSelector:
       kubernetes.io/os: linux
-      kubernetes.io/hostname: amd5
+      kubernetes.io/hostname: dietpi
     webhook:
       nodeSelector:
         kubernetes.io/os: linux
-        kubernetes.io/hostname: amd5
+        kubernetes.io/hostname: dietpi
     cainjector:
       nodeSelector:
         kubernetes.io/os: linux
-        kubernetes.io/hostname: amd5
+        kubernetes.io/hostname: dietpi
