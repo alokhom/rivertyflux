@@ -3,22 +3,22 @@ kind: ClusterIssuer
 metadata:
   name: ca-issuer
   #name: selfsigned-issuer
-  namespace: cert-manager
+  #namespace: cert-manager
 spec:
   #selfSigned: {}
   #ca:
     #secretName: ssl-ingress-secret-ca
     #secretName: ssl-ingress-secret
   acme: 
-    #server: "https://acme-v02.api.letsencrypt.org/directory"
-    server: "https://acme-staging-v02.api.letsencrypt.org/directory"
-    email: "alok.hom@outook.com"
+    server: "https://acme-v02.api.letsencrypt.org/directory"
+    #server: "https://acme-staging-v02.api.letsencrypt.org/directory"
+    email: "alok.hom@rediffmail.com"
     privateKeySecretRef: 
-      name: letsencrypt-staging
+      name: letsencrypt-production
     solvers:
       - http01:
           ingress:
-            class: nginx
+            ingressClassName: nginx
 #---
 #apiVersion: cert-manager.io/v1
 #kind: Certificate
