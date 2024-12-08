@@ -22,7 +22,3 @@ spec:
             name: py-app
             port:
               number: 5000
-  tls: # < placing a host in the TLS config will determine what ends up in the cert's subjectAltNames
-  - hosts:
-    - rps.systemtracker.no-ip.org
-    secretName: rpsingress-cert # < cert-manager will store the created certificate in this secret.
