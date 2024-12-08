@@ -12,3 +12,4 @@ resources:
   - ./longhorn
   - ./flyte
   - ./sqllite3
+  - cert-manager
