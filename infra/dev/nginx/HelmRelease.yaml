@@ -1195,9 +1195,9 @@ spec:
     # -- TCP service key-value pairs
     ## Ref: https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/exposing-tcp-udp-services.md
     ##
-    tcp:
+    tcp: {}
       #"8080": "default/example-tcp-svc:9000"
-      "5000": "py-app/py-app:5000"
+      #"5000": "py-app/py-app:5000"
 
     # -- UDP service key-value pairs
     ## Ref: https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/exposing-tcp-udp-services.md
