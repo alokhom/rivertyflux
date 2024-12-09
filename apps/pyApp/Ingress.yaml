@@ -3,14 +3,14 @@ kind: Ingress
 metadata:
   name: py-app
   namespace: py-app
-  annotations:
-    cert-manager.io/cluster-issuer: "ca-issuer"
+  annotations: {}
+  #  cert-manager.io/cluster-issuer: "ca-issuer"
 spec:
   ingressClassName: nginx
-  tls:
-  - hosts:
-    - rps.systemtracker.no-ip.org
-    secretName: rps-tls
+  #tls:
+  #- hosts:
+  #  - rps.systemtracker.no-ip.org
+  #  secretName: rps-tls
   rules:
   - host: rps.systemtracker.no-ip.org
     http:
