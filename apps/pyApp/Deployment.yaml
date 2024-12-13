@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: py-app
-        image: alokhom/python-docker:1.27
+        image: alokhom/python-docker:1.28
         ports:
         - containerPort: 5000
