@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: py-app
-        image: alokhom/python-docker:1.40.0 # {"$imagepolicy": "py-app:py-apppolicy"}
+        image: alokhom/python-docker:1.40.2 # {"$imagepolicy": "py-app:py-apppolicy"}
         ports:
         - containerPort: 5000
