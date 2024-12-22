@@ -43,7 +43,7 @@ spec:
   ref:
     branch: main
   secretRef:
-    name: pythonapp-auth
+    name: py-appauth
     namespace: py-app
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
