@@ -43,7 +43,8 @@ spec:
   ref:
     branch: main
   secretRef:
-    name: pythonapp-auth
+    name: flux-system
+    namespace: flux-system
 ---
 apiVersion: v1
 kind: Secret
