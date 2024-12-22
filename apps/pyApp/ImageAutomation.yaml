@@ -53,16 +53,17 @@ metadata:
 stringData:
   identity: |
     -----BEGIN PRIVATE KEY-----
-    MIG2AgEAMBAGByqGSM49AgEGBSuBBAAiBIGeMIGbAgEBBDB2thfGPOf58htRpBYw
-    if6qhJXGUC4p6b0GjBeN1CTPUgQsy+3pNX+A5ykwP66+gEuhZANiAAQilWo3elT1
-    yAmO8eTVXtquYvUbuHn/2m3rZ37l+7h7XPNgJvABAr3U9/Y3PXqxy+/0jmuN80yG
-    5aA23shkNurwFPVZWd/60DB9ZVUoos2fX0tZEutLQTDOHOilJlz9+5k=
+    MIHuAgEAMBAGByqGSM49AgEGBSuBBAAjBIHWMIHTAgEBBEIABSPJ/TQzhdjhmCrs
+    c6uIrMRhvvSRxTHYmNOyiW3pjsJo7mrmagiYHScZ9tieJgOndcGphO6vC8jyVBcT
+    mEVh5gyhgYkDgYYABADcYsxndsImDcQhXtgsoxLL14PSY+8m/ZyRtIHfEtc0cJ3d
+    7yjz/i2znQvjI+Av5mhJ7fw58pl2YbcZJpC2Rn9KxgAEV351BLyazkLeqXu4R2+I
+    WJcN2v1QlBbroRwDp6QAzVst7TS0lFZy8V8swiDn1cQLB5qpMwIDUBwz13pkhvgY
+    mA==
     -----END PRIVATE KEY-----
   identity.pub: |
-    ecdsa-sha2-nistp384 AAAAE2VjZHNhLXNoYTItbmlzdHAzODQAAAAIbmlzdHAzODQAAABhBCKVajd6VPXICY7x5NVe2q5i9Ru4ef/abetnfuX7uHtc82Am8AECvdT39jc9erHL7/SOa43zTIbloDbeyGQ26vAU9VlZ3/rQMH1lVSiizZ9fS1kS60tBMM4c6KUmXP37mQ==
+    ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBADcYsxndsImDcQhXtgsoxLL14PSY+8m/ZyRtIHfEtc0cJ3d7yjz/i2znQvjI+Av5mhJ7fw58pl2YbcZJpC2Rn9KxgAEV351BLyazkLeqXu4R2+IWJcN2v1QlBbroRwDp6QAzVst7TS0lFZy8V8swiDn1cQLB5qpMwIDUBwz13pkhvgYmA==       
   known_hosts: |
-    github.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg
----
+    github.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg=---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageUpdateAutomation
 metadata:
