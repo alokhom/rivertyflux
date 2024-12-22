@@ -30,7 +30,7 @@ spec:
     name: py-app
   policy:
     semver:
-      range: '^1.x'
+      range: '^1.x.y'
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
