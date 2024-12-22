@@ -53,6 +53,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: py-app
+    namespace: py-app
   git:
     commit:
       messageTemplate: |
