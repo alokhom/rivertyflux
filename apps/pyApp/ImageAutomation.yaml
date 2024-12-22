@@ -84,3 +84,26 @@ spec:
       branch: main
   update:
     path: ./apps/pyApp
+    strategy: Setters
+---
+apiVersion: v1
+data:
+  token: MTlkNzllOGMyODFlNzkwNThkZDQzMDE2M2M4NmNjMjg1MDZhZDg2Ng==
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: webhook-token
+  namespace: py-app
+---
+apiVersion: notification.toolkit.fluxcd.io/v1
+kind: Receiver
+metadata:
+  name: py-app
+  namespace: py-app
+spec:
+  type: dockerhub
+  secretRef:
+    name: webhook-token
+  resources:
+    - kind: ImageRepository
+      name: py-apppolicy
