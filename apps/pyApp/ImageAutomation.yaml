@@ -1,18 +1,18 @@
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
-kind: ImageRepository
+kind: ImageRepository1h
 metadata:
   name: py-app
   namespace: py-app
 spec:
   image: alokhom/python-docker
-  interval: 5h
+  interval: 30m
   secretRef:
     name: regcred
 ---
 apiVersion: v1
 data:
-  .dockerconfigjson: eyJhdXRocyI6eyJkb2NrZXIuaW8iOnsidXNlcm5hbWUiOiJhbG9raG9tIiwicGFzc3dvcmQiOiJBbmFtaWthMTk3OCEiLCJlbWFpbCI6ImFsb2suaG9tQGdtYWlsLmNvbSIsImF1dGgiOiJZV3h2YTJodmJUcEJibUZ0YVd0aE1UazNPQ0U9In19fQ==
+  .dockerconfigjson: eyJhdXRocyI6eyJodHRwczovL2luZGV4LmRvY2tlci5pby92MS8iOnsidXNlcm5hbWUiOiJhbG9raG9tIiwicGFzc3dvcmQiOiJBbmFtaWthMTk3OCEiLCJlbWFpbCI6ImFsb2suaG9tQGdtYWlsLmNvbSIsImF1dGgiOiJZV3h2YTJodmJUcEJibUZ0YVd0aE1UazNPQ0U9In19fQ==
 kind: Secret
 metadata:
   creationTimestamp: null
