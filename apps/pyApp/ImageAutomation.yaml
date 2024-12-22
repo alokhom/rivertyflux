@@ -1,6 +1,6 @@
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
-kind: ImageRepository1h
+kind: ImageRepository
 metadata:
   name: py-app
   namespace: py-app
