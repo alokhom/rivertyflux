@@ -43,28 +43,8 @@ spec:
   ref:
     branch: main
   secretRef:
-    name: flux-system
-    namespace: flux-system
----
-apiVersion: v1
-kind: Secret
-metadata:
-  name: pythonapp-auth
-  namespace: py-app
-stringData:
-  identity: |
-    -----BEGIN PRIVATE KEY-----
-    MIHuAgEAMBAGByqGSM49AgEGBSuBBAAjBIHWMIHTAgEBBEIABSPJ/TQzhdjhmCrs
-    c6uIrMRhvvSRxTHYmNOyiW3pjsJo7mrmagiYHScZ9tieJgOndcGphO6vC8jyVBcT
-    mEVh5gyhgYkDgYYABADcYsxndsImDcQhXtgsoxLL14PSY+8m/ZyRtIHfEtc0cJ3d
-    7yjz/i2znQvjI+Av5mhJ7fw58pl2YbcZJpC2Rn9KxgAEV351BLyazkLeqXu4R2+I
-    WJcN2v1QlBbroRwDp6QAzVst7TS0lFZy8V8swiDn1cQLB5qpMwIDUBwz13pkhvgY
-    mA==
-    -----END PRIVATE KEY-----
-  identity.pub: |
-    ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBADcYsxndsImDcQhXtgsoxLL14PSY+8m/ZyRtIHfEtc0cJ3d7yjz/i2znQvjI+Av5mhJ7fw58pl2YbcZJpC2Rn9KxgAEV351BLyazkLeqXu4R2+IWJcN2v1QlBbroRwDp6QAzVst7TS0lFZy8V8swiDn1cQLB5qpMwIDUBwz13pkhvgYmA==       
-  known_hosts: |
-    github.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg=
+    name: pythonapp-auth
+    namespace: py-app
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageUpdateAutomation
