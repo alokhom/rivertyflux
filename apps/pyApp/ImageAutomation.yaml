@@ -32,16 +32,35 @@ spec:
     semver:
       range: '^1.x'
 ---
-apiVersion: source.toolkit.fluxcd.io/v1
+apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
   name: py-app
   namespace: py-app
 spec:
   interval: 5m0s
-  url: https://github.com/alokhom/rivertyflux
+  url: ssh://git@github.com/alokhom/rivertyflux
   ref:
     branch: main
+  secretRef:
+    name: pythonapp-auth
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: pythonapp-auth
+  namespace: py-app
+stringData:
+  identity: |
+    -----BEGIN PRIVATE KEY-----
+    MIG2AgEAMBAGByqGSM49AgEGBSuBBAAiBIGeMIGbAgEBBDB2thfGPOf58htRpBYw
+    if6qhJXGUC4p6b0GjBeN1CTPUgQsy+3pNX+A5ykwP66+gEuhZANiAAQilWo3elT1
+    yAmO8eTVXtquYvUbuHn/2m3rZ37l+7h7XPNgJvABAr3U9/Y3PXqxy+/0jmuN80yG
+    5aA23shkNurwFPVZWd/60DB9ZVUoos2fX0tZEutLQTDOHOilJlz9+5k=
+    -----END PRIVATE KEY-----
+  identity.pub: |
+    ecdsa-sha2-nistp384 AAAAE2VjZHNhLXNoYTItbmlzdHAzODQAAAAIbmlzdHAzODQAAABhBCKVajd6VPXICY7x5NVe2q5i9Ru4ef/abetnfuX7uHtc82Am8AECvdT39jc9erHL7/SOa43zTIbloDbeyGQ26vAU9VlZ3/rQMH1lVSiizZ9fS1kS60tBMM4c6KUmXP37mQ==
+  known_hosts: github.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageUpdateAutomation
