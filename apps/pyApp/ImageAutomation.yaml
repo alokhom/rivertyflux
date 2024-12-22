@@ -6,7 +6,7 @@ metadata:
   namespace: py-app
 spec:
   image: alokhom/python-docker
-  interval: 30m
+  interval: 5m
   secretRef:
     name: regcred
 ---
