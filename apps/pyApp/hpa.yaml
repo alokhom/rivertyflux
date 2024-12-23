@@ -52,7 +52,7 @@ spec:
         selector: {matchLabels: {verb: GET}}
       targetValue: 10
       target:
-        kind: Value
+        type: Value
         name: 100
   # default behavior if no metrics are specified
   behavior:
