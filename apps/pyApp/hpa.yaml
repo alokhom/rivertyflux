@@ -55,7 +55,9 @@ spec:
         kind: Service
         name: py-app
       metricName: http_requests
-      targetValue: 100
+      target:
+        type: Value
+        averageValue: 100
   # default behavior if no metrics are specified
   # behavior:
   #   scaleDown:
