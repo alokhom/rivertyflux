@@ -168,7 +168,7 @@ spec:
           name:
             matches: ^(.*)_(total)$
             as: "${1}"
-          metricsQuery: "sum(rate(<<.Series>>{<<.LabelMatchers>>}[1m])) by (<<.GroupBy>>)"
+          metricsQuery: 'sum(rate(<<.Series>>{<<.LabelMatchers>>}[1m])) by (<<.GroupBy>>)'
 
         - seriesQuery: '{__name__=~"^container_.*",container!="POD",namespace!="",pod!=""}'
           resources:
@@ -187,7 +187,7 @@ spec:
           # This is a Go template where the `.Series` and `.LabelMatchers` string values
           # are available, and the delimiters are `<<` and `>>` to avoid conflicts with
           # the prometheus query language
-          metricsQuery: "sum(rate(<<.Series>>{<<.LabelMatchers>>,container!="POD"}[2m])) by (<<.GroupBy>>)"
+          metricsQuery: 'sum(rate(<<.Series>>{<<.LabelMatchers>>,container!="POD"}[2m])) by (<<.GroupBy>>)'
 
         - seriesQuery: '{__name__=~"jvm_memory_bytes_(used|max)",area="heap"}'
           seriesFilters:
@@ -203,7 +203,7 @@ spec:
           name:
             matches: ^jvm_memory_bytes_(used|max)$
             as: "jvm_used_percent_housing"
-          metricsQuery: "((sum((jvm_memory_used_bytes{area="heap", <<.LabelMatchers>>}))by(<<.GroupBy>>)*100/sum((jvm_memory_max_bytes{area="heap", <<.LabelMatchers>>}))by(<<.GroupBy>>)))/1000"
+          metricsQuery: '((sum((jvm_memory_used_bytes{area="heap", <<.LabelMatchers>>}))by(<<.GroupBy>>)*100/sum((jvm_memory_max_bytes{area="heap", <<.LabelMatchers>>}))by(<<.GroupBy>>)))/1000'
 
       # Mounts a configMap with pre-generated rules for use. Overrides the
       # default, custom, external and resource entries
