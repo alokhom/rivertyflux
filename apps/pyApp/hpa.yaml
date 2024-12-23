@@ -42,7 +42,7 @@ spec:
         kind: Ingress
         name: py-app
       target:
-        type: Value
+        type: AverageValue
         value: 100
   - type: Object
     object:
@@ -52,7 +52,7 @@ spec:
         selector: {matchLabels: {verb: GET}}
       targetValue: 10
       target:
-        type: Value
+        type: AverageValue
         name: 100
   # default behavior if no metrics are specified
   behavior:
