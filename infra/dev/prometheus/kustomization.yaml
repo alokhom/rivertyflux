@@ -13,3 +13,4 @@ resources:
   - minio-HelmRelease.yaml
   - minio-HelmRepository.yaml
   - ./custommetrics
+  - ./prom-operator
