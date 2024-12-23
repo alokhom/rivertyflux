@@ -50,8 +50,8 @@ spec:
     # Url to access prometheus
     prometheus:
       # Value is templated
-      url: http://prometheus-server.prometheus.svc.cluster.local
-      port: 80
+      url: http://kps-kube-prometheus-stack-prometheus.prometheus.svc.cluster.local
+      port: 9090
       path: ""
 
     replicas: 1
@@ -204,6 +204,15 @@ spec:
             matches: ^jvm_memory_bytes_(used|max)$
             as: "jvm_used_percent_housing"
           metricsQuery: '((sum((jvm_memory_used_bytes{area="heap", <<.LabelMatchers>>}))by(<<.GroupBy>>)*100/sum((jvm_memory_max_bytes{area="heap", <<.LabelMatchers>>}))by(<<.GroupBy>>)))/1000'
+
+        # - seriesQuery:'{__name__=~"traefik_service_avg_response_time", service!=""}'
+        #   resources:
+        #     overrides:
+        #       app_name:
+        #         resource: service
+        #       namespace:
+        #         resource: namespace
+        #   metricsQuery: 'traefik_service_avg_response_time{<<.LabelMatchers>>}'
 
       # Mounts a configMap with pre-generated rules for use. Overrides the
       # default, custom, external and resource entries
