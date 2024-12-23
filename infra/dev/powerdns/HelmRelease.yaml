@@ -136,7 +136,7 @@ spec:
 
     # @ignored
     nodeSelector:
-      kubernetes.io/hostname: dietpi
+      kubernetes.io/hostname: amd5
 
     # @ignored
     tolerations: []
@@ -272,7 +272,7 @@ spec:
               - op: add
                 path: "/spec/template/spec/nodeSelector"
                 value:
-                  kubernetes.io/hostname: dietpi
+                  kubernetes.io/hostname: amd5
           - target:
               version: v1
               kind: StatefulSet
@@ -281,4 +281,4 @@ spec:
               - op: add
                 path: "/spec/template/spec/nodeSelector"
                 value:
-                  kubernetes.io/hostname: dietpi
+                  kubernetes.io/hostname: amd5
