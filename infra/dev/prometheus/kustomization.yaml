@@ -3,14 +3,8 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - HelmRepository.yaml
-  - HelmRelease.yaml
-  - statsd-HelmRelease.yaml
-  - grafana-HelmRepository.yaml
-  - grafana-HelmRelease.yaml
-  - grafana-secret.yaml
-  - grafana-dashboard.yaml
-  - grafana-loki-HelmRelease.yaml
-  - minio-HelmRelease.yaml
-  - minio-HelmRepository.yaml
+  - ./prometheus
+  - ./statsd
+  - ./grafana_n_loki
   - ./custommetrics
   - ./prom-operator

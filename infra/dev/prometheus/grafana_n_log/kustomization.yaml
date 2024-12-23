@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - grafana-dashboard.yaml
+  - grafana-secret.yaml
+  - grafana-HelmRelease.yaml
+  - grafana-HelmRepository.yaml
+  - grafana-loki-HelmRelease.yaml
+  - minio-HelmRelease.yaml
+  - minio-HelmRepository.yaml
