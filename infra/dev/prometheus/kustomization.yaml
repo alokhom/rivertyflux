@@ -12,3 +12,4 @@ resources:
   - grafana-loki-HelmRelease.yaml
   - minio-HelmRelease.yaml
   - minio-HelmRepository.yaml
+  - ./custommetrics

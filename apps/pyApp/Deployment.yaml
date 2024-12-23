@@ -42,3 +42,55 @@ spec:
       target:
         type: Utilization
         averageUtilization: 50
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80
+  - type: Pods
+    pods:
+      metric:
+        name: packets-per-second
+      target:
+        type: AverageValue
+        averageValue: 1k
+  - type: Object
+    object:
+      metric:
+        name: requests-per-second
+      describedObject:
+        apiVersion: networking.k8s.io/v1
+        kind: Ingress
+        name: py-app
+      target:
+        type: Value
+        value: 100
+  - type: Object
+    object:
+      metric:
+        name: http_requests
+        # label selector
+        selector: {matchLabels: {verb: GET}}
+      targetValue: 10
+      target:
+        kind: Service
+        name: py-app
+  # default behavior if no metrics are specified
+  behavior:
+    scaleDown:
+      stabilizationWindowSeconds: 300
+      policies:
+      - type: Percent
+        value: 100
+        periodSeconds: 15
+    scaleUp:
+      stabilizationWindowSeconds: 0
+      policies:
+      - type: Percent
+        value: 100
+        periodSeconds: 15
+      - type: Pods
+        value: 4
+        periodSeconds: 15
+      selectPolicy: Max
