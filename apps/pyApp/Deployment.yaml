@@ -20,5 +20,12 @@ spec:
         image: alokhom/python-docker:1.40.3 # {"$imagepolicy": "py-app:py-apppolicy"}
         ports:
         - containerPort: 5000
+        resources:
+          limits:
+            cpu: 100m
+            memory: 128Mi
+          requests:
+            cpu: 100m
+            memory: 500Mi
       nodeSelector:
         kubernetes.io/hostname: dietpi
