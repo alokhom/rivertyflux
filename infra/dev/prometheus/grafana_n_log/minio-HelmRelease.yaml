@@ -229,7 +229,7 @@ spec:
         nginx.ingress.kubernetes.io/whitelist-source-range: 0.0.0.0/0
       path: /
       hosts:
-        - minio-example.local
+        - minio.systemtracker.no-ip.org
       tls: []
       #  - secretName: chart-example-tls
       #    hosts:
@@ -257,7 +257,7 @@ spec:
 
     consoleIngress:
       enabled: false
-      ingressClassName: ~
+      ingressClassName: nginx
       labels: {}
         # node-role.kubernetes.io/ingress: platform
       annotations: {}
@@ -270,7 +270,7 @@ spec:
         # nginx.ingress.kubernetes.io/whitelist-source-range: 0.0.0.0/0
       path: /
       hosts:
-        - console.minio-example.local
+        - console-minio.systemtracker.no-ip.org
       tls: []
       #  - secretName: chart-example-tls
       #    hosts:

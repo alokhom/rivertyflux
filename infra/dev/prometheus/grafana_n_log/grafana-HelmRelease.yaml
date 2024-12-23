@@ -306,7 +306,7 @@ spec:
       pathType: Prefix
 
       hosts:
-        - grafana.local
+        - grafana.systemtracker.no-ip.org
       ## Extra paths to prepend to every host configuration. This is useful when working with annotation based services.
       extraPaths: []
       # - path: /*

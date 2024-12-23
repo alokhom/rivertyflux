@@ -1059,7 +1059,7 @@ spec:
       pathType: Prefix
 
       hosts:
-        - loki.example.com
+        - loki.systemtracker.no-ip.org
       # tls:
       #   - secretName: loki-distributed-tls
       #     hosts:
