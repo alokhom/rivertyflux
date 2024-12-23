@@ -52,8 +52,8 @@ spec:
         selector: {matchLabels: {verb: GET}}
       targetValue: 10
       target:
-        kind: Service
-        name: py-app
+        kind: Value
+        name: 100
   # default behavior if no metrics are specified
   behavior:
     scaleDown:
