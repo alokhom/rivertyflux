@@ -20,3 +20,25 @@ spec:
         image: alokhom/python-docker:1.40.2 # {"$imagepolicy": "py-app:py-apppolicy"}
         ports:
         - containerPort: 5000
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: py-app
+  namespace: py-app
+  labels:
+    app: py-app
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: py-app
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50
