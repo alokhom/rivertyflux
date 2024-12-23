@@ -49,6 +49,18 @@ spec:
       target:
         type: Value
         value: 10
+  # use a "Pods" metric, which takes the average of the
+  # given metric across all pods controlled by the autoscaling target
+  - type: Pods
+    pods:
+      # use the metric that you used above: pods/http_requests
+      metric:
+        name: http_requests
+      # target 500 milli-requests per second,
+      # which is 1 request every two seconds
+      target:
+        type: Value
+        averageValue: 500m
   # default behavior if no metrics are specified
   # behavior:
   #   scaleDown:
