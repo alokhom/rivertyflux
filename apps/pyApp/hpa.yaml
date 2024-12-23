@@ -51,14 +51,11 @@ spec:
         value: 500
   - type: Object
     object:
-      metric:
-        name: http_requests
-        # label selector
-        selector: {matchLabels: {verb: GET}}
-      targetValue: 10
       target:
-        type: Value
-        name: 100
+        kind: Service
+        name: py-app
+      metricName: http_requests
+      targetValue: 100
   # default behavior if no metrics are specified
   # behavior:
   #   scaleDown:

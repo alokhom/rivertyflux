@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: sample-metrics-app
+  namespace: py-app
+  labels:
+    service-monitor: py-app
+spec:
+  selector:
+    matchLabels:
+      app: py-app
+  endpoints:
+  - port: py-appweb
