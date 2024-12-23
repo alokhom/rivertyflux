@@ -6,3 +6,4 @@ resources:
   - Service.yaml
   - Ingress.yaml
   - ImageAutomation.yaml
+  - hpa.yaml
