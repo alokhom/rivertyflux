@@ -51,10 +51,9 @@ spec:
   #       value: 500
   - type: Object
     object:
-      target:
-        kind: Service
-        name: py-app
-      metricName: http_requests
+      metric:
+        name: http_requests
+      selector: {matchLabels: {verb: GET}}
       target:
         type: Value
         averageValue: 100
