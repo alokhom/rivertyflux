@@ -272,7 +272,7 @@ spec:
               - op: add
                 path: "/spec/template/spec/nodeSelector"
                 value:
-                  kubernetes.io/hostname: amd5
+                  kubernetes.io/hostname: dietpi
           - target:
               version: v1
               kind: StatefulSet
