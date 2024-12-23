@@ -188,6 +188,12 @@ spec:
           CREATE USER 'pda' IDENTIFIED BY 'pda';
           GRANT ALL PRIVILEGES ON pda.* TO 'pda';
           FLUSH PRIVILEGES;
+      primary:
+        nodeSelector:
+          kubernetes.io/hostname: amd5
+      secondary:
+        nodeSelector:
+          kubernetes.io/hostname: amd5
 
 
     # https://github.com/bitnami/charts/blob/master/bitnami/phpmyadmin/values.yaml
