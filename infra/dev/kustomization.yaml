@@ -13,3 +13,4 @@ resources:
   - ./flyte
   - ./sqllite3
   - ./cert-manager
+  - ./powerdns
