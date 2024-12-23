@@ -171,3 +171,18 @@ subjects:
 - kind: ServiceAccount
   name: horizontal-pod-autoscaler
   namespace: kube-system
+# user is allowed to curl into custom-metrics-apiserver
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  creationTimestamp: null
+  name: allowall-cm
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: custom-metrics-server-resources
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: system:anonymous

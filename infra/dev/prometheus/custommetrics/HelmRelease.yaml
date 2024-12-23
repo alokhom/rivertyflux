@@ -204,6 +204,18 @@ spec:
             matches: ^jvm_memory_bytes_(used|max)$
             as: "jvm_used_percent_housing"
           metricsQuery: '((sum((jvm_memory_used_bytes{area="heap", <<.LabelMatchers>>}))by(<<.GroupBy>>)*100/sum((jvm_memory_max_bytes{area="heap", <<.LabelMatchers>>}))by(<<.GroupBy>>)))/1000'
+        
+        # envoy servicemesh will use the app envoy proxy sidecar to scrape and send the metrics to the prometheus server. Open telemetry needs to be used to send it to prometheus server.
+        #  You can configure the Prometheus adapter and transform this metric from prometheus into req/sec rate by using the following configuration and send it to custom metrics API.
+        - seriesQuery: 'envoy_cluster_upstream_rq {namespace!="",kubernetes_pod_name!=""}'
+          resources:
+            overrides:
+              namespace: {resource: "namespace"}
+              kubernetes_pod_name: {resource: "pod"}
+          name:
+            matches: "envoy_cluster_upstream_rq " 
+            as: "appmesh_requests_per_second"
+          metricsQuery: 'sum(rate(<<.Series>>{<<.LabelMatchers>>}[1m])) by (<<.GroupBy>>)'
 
         # - seriesQuery:'{__name__=~"traefik_service_avg_response_time", service!=""}'
         #   resources:
