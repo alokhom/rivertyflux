@@ -113,7 +113,7 @@ spec:
       - name: custom-metrics-server
         image: luxas/k8s-prometheus-adapter:v0.2.0-beta.0
         args:
-        - --prometheus-url=http://sample-metrics-prom.default.svc:9090
+        - --prometheus-url=http://prometheus-server.prometheus.svc:80
         - --metrics-relist-interval=30s
         - --rate-interval=60s
         - --v=10
