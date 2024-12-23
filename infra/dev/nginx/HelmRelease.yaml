@@ -1199,13 +1199,13 @@ spec:
     tcp:
       #"8080": "default/example-tcp-svc:9000"
       #"5000": "py-app/py-app:5000"
-      "53": "powerdns/powerdns-dns-tcp:53"
+      "5353": "powerdns/powerdns-dns-tcp:53"
 
     # -- UDP service key-value pairs
     ## Ref: https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/exposing-tcp-udp-services.md
     ##
     udp:
-      "53": "powerdns/powerdns-dns-udp:53"
+      "5353": "powerdns/powerdns-dns-udp:53"
     #  "53": "kube-system/kube-dns:53"
 
     # -- Prefix for TCP and UDP ports names in ingress controller service
