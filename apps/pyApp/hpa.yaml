@@ -10,7 +10,7 @@ metadata:
     # metric-config.<metricType>.<metricName>.<collectorType>/<configKey>
     metric-config.pods.requests-per-second.json-path/json-key: "$.http_server.rps"
     metric-config.pods.requests-per-second.json-path/path: /metrics
-    metric-config.pods.requests-per-second.json-path/port: "9090"
+    metric-config.pods.requests-per-second.json-path/port: "5000"
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
