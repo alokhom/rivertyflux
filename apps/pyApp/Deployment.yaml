@@ -23,9 +23,9 @@ spec:
         resources:
           limits:
             cpu: 100m
-            memory: 128Mi
+            memory: 500Mi
           requests:
             cpu: 100m
-            memory: 500Mi
+            memory: 128Mi
       nodeSelector:
         kubernetes.io/hostname: dietpi
