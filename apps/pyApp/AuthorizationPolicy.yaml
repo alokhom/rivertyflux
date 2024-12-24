@@ -1,0 +1,21 @@
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+ name: pyapp-waypoint-policy
+ namespace: py-app
+spec:
+  # uses waypoint L7 sevices
+  targetRefs:
+  - kind: Service
+    group: ""
+    name: py-app
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+        principals:
+        - cluster.local/ns/py-app/sa/py-sa
+    to:
+    - operation:
+        paths: ["/"]
+        methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD"]

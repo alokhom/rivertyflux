@@ -8,3 +8,5 @@ resources:
   - ImageAutomation.yaml
   - hpa.yaml
   - ServiceMonitor.yaml
+  - AuthorizationPolicy.yaml
+  - sa.yaml

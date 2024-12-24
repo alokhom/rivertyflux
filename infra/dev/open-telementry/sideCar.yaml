@@ -1,0 +1,23 @@
+apiVersion: opentelemetry.io/v1beta1
+kind: OpenTelemetryCollector
+metadata:
+  name: sidecar
+  namespace: opentelemetry
+spec:
+  mode: sidecar
+  config:
+    receivers:
+      jaeger:
+        protocols:
+          thrift_compact: {}
+    processors: {}
+
+    exporters:
+      debug: {}
+
+    service:
+      pipelines:
+        traces:
+          receivers: [jaeger]
+          processors: []
+          exporters: [debug]

@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - HelmRepository.yaml
+  - HelmRelease.yaml
+  - namespace.yaml
+  # CRDS
+  - monitoring.coreos.com_podmonitors.yaml
+  - monitoring.coreos.com_servicemonitors.yaml
+  - opentelemetry.io_instrumentations.yaml
+  - opentelemetry.io_opampbridges.yaml
+  - opentelemetry.io_opentelemetrycollectors.yaml
+  # CR
+  - sideCar.yaml
