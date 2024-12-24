@@ -95,14 +95,14 @@ spec:
       featureGates: ""
       # The featureGatesMap will enable or disable specific feature gates in the operator as well as deploy any prerequisites for the feature gate.
       # If this property is not an empty map, the featureGates property will be ignored.
-      featureGatesMap:
-        targetAllocatorMtls: true
-        targetAllocatorCR: true
-        targetAllocatorFallbackStrategy: true
-        nativeSideCarContainers: true
-        prometheusOperator: true
-        golangFlags: true
-        collectorDefaultConfig: true
+      featureGatesMap: {}
+        # targetAllocatorMtls: true
+        # targetAllocatorCR: true
+        # targetAllocatorFallbackStrategy: true
+        # nativeSideCarContainers: true
+        # prometheusOperator: true
+        # golangFlags: true
+        # collectorDefaultConfig: true
       ports:
         metricsPort: 8080
         webhookPort: 9443
