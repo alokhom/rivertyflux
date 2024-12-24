@@ -7,4 +7,4 @@ resources:
   - ./statsd
   - ./grafana_n_log
   - ./custommetrics
-  - ./kube-state-metrics
+  #- ./kube-state-metrics
