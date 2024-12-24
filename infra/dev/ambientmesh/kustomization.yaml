@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - crd-standardinstall.yaml
-  - HelmRepository.yaml
+  #- HelmRepository.yaml
   # - istiobase-HelmRelease.yaml
   # - istiocni-HelmRelease.yaml
   # - istiod-HelmRelease.yaml
