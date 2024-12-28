@@ -46,6 +46,7 @@ spec:
 
       excludeNamespaces:
         - kube-system
+        - istio-system
 
       # Allows user to set custom affinity for the DaemonSet
       affinity: {}
