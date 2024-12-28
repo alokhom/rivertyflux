@@ -49,10 +49,10 @@ spec:
       # CNI-and-platform specific path defaults.
       # These may need to be set to platform-specific values, consult
       # overrides for your platform in `manifests/helm-profiles/platform-*.yaml`
-      # cniBinDir: /var/lib/rancher/k3s/data/cni
-      cniBinDir: /opt/cni/bin
-      # cniConfDir: /var/lib/rancher/k3s/agent/etc/cni/net.d
-      cniConfDir: /etc/cni/net.d
+      cniBinDir: /var/lib/rancher/k3s/data/cni
+      # cniBinDir: /opt/cni/bin
+      cniConfDir: /var/lib/rancher/k3s/agent/etc/cni/net.d
+      # cniConfDir: /etc/cni/net.d
       cniConfFileName: ""
       cniNetnsDir: "/var/run/netns"
 
