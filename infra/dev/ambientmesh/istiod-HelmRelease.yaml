@@ -19,6 +19,7 @@ spec:
     # For instance, instead of `--set _internal_defaults_do_not_set.foo=bar``, just set `--set foo=bar`.
     _internal_defaults_do_not_set:
       profile: ambient
+      platform: k3s
       autoscaleEnabled: true
       autoscaleMin: 1
       autoscaleMax: 5

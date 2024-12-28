@@ -6,8 +6,16 @@ resources:
   - HelmRepository.yaml
   - istiobase-HelmRelease.yaml
   - istiocni-HelmRelease.yaml
-  # - istiod-HelmRelease.yaml
-  # - istioztunnel-HelmRelease.yaml
-  # - istio-waypointGW.yaml
+  - istiod-HelmRelease.yaml
+  - istioztunnel-HelmRelease.yaml
+  - istio-waypointGW.yaml
   - ./kiali
 
+# ---
+# apiVersion: v1
+# kind: Namespace
+# metadata:
+#   labels:
+#     istio.io/use-waypoint: waypoint
+#     kubernetes.io/metadata.name: default
+#   name: default
