@@ -50,7 +50,7 @@ spec:
       # These may need to be set to platform-specific values, consult
       # overrides for your platform in `manifests/helm-profiles/platform-*.yaml`
       # cniBinDir: /var/lib/rancher/k3s/data/current/bin/
-      cniBinDir: /opt/cni/bin
+      cniBinDir: /var/lib/rancher/k3s/data/current/bin
       cniConfDir: /var/lib/rancher/k3s/agent/etc/cni/net.d
       # cniConfDir: /etc/cni/net.d
       cniConfFileName: ""
