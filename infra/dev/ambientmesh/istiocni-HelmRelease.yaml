@@ -56,7 +56,7 @@ spec:
       # overrides for your platform in `manifests/helm-profiles/platform-*.yaml`
       # cniBinDir: /var/lib/rancher/k3s/data/current/bin/
       cniBinDir: /opt/cni/bin
-      cniConfDir: /etc/cni/net.d
+      cniConfDir: /var/lib/rancher/k3s/agent/etc/cni/net.d
       cniConfFileName: ""
       cniNetnsDir: "/var/run/netns"
 
