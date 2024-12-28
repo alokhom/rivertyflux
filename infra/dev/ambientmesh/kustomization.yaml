@@ -8,5 +8,6 @@ resources:
   - istiocni-HelmRelease.yaml
   - istiod-HelmRelease.yaml
   - istioztunnel-HelmRelease.yaml
+  - istio-waypointGW.yaml
   - ./kiali
 
