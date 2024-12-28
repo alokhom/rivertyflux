@@ -15,10 +15,10 @@ spec:
         namespace: istio-system
       interval: 5m
   values:
-    profile: ambient
     # "_internal_defaults_do_not_set" is a workaround for Helm limitations. Users should NOT set "._internal_defaults_do_not_set" explicitly, but rather directly set the fields internally.
     # For instance, instead of `--set _internal_defaults_do_not_set.foo=bar``, just set `--set foo=bar`.
     _internal_defaults_do_not_set:
+      profile: ambient
       hub: ""
       tag: ""
       variant: ""
@@ -37,7 +37,7 @@ spec:
       # CNI-and-platform specific path defaults.
       # These may need to be set to platform-specific values, consult
       # overrides for your platform in `manifests/helm-profiles/platform-*.yaml`
-      cniBinDir: /var/lib/rancher/k3s/data/current/bin/
+      cniBinDir: /var/lib/rancher/k3s/data/cni
       cniConfDir: /var/lib/rancher/k3s/agent/etc/cni/net.d
       cniConfFileName: ""
       cniNetnsDir: "/var/run/netns"
@@ -137,7 +137,8 @@ spec:
 
         # Variant of the image to use.
         # Currently supported are: [debug, distroless]
-        variant: ""
+        variant: "distroless"
+        platform: k3s
 
         # Specify image pull policy if default behavior isn't desired.
         # Default behavior: latest images will be Always else IfNotPresent.
