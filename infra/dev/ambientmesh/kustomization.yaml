@@ -8,5 +8,5 @@ resources:
   # - istiocni-HelmRelease.yaml
   # - istiod-HelmRelease.yaml
   # - istioztunnel-HelmRelease.yaml
-  - ./kaili
+  - ./kiali
 
