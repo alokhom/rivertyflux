@@ -24,7 +24,7 @@ spec:
                 name: istio-cni-node
                 namespace: istio-system
               patch: |
-                - op: add
+                - op: replace
                   path: /spec/template/spec/containers/0/securityContext/privileged
                   value: true
     # "_internal_defaults_do_not_set" is a workaround for Helm limitations. Users should NOT set "._internal_defaults_do_not_set" explicitly, but rather directly set the fields internally.
