@@ -102,6 +102,17 @@ data:
       version_label: v2.0.0
       view_only_mode: false
     external_services:
+      prometheus:
+        # Prometheus service name is "metrics" and is in the "telemetry" namespace
+        url: "http://kps-kube-prometheus-stack-prometheus.prometheus.svc:9090"
+        enabled: true
+        # Fix the "Unreachable" metrics server warning.
+        health_check_url: ""
+        # Fix for the empty metrics dashboards
+        thanos_proxy:
+          enabled: true
+          retention_period: "7d"
+          scrape_interval: "30s"
       custom_dashboards:
         enabled: true
       istio:
