@@ -4,9 +4,9 @@ resources:
   - namespace.yaml
   - crd-standardinstall.yaml
   - HelmRepository.yaml
-  # - istiobase-HelmRelease.yaml
-  # - istiocni-HelmRelease.yaml
-  # - istiod-HelmRelease.yaml
-  # - istioztunnel-HelmRelease.yaml
+  - istiobase-HelmRelease.yaml
+  - istiocni-HelmRelease.yaml
+  - istiod-HelmRelease.yaml
+  - istioztunnel-HelmRelease.yaml
   - ./kiali
 
