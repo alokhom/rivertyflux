@@ -15,4 +15,4 @@ resources:
   - ./cert-manager
   - ./powerdns
   - ./open-telemetry
-  - ./ambientmesh
+  #- ./ambientmesh
