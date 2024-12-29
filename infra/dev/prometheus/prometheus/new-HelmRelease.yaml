@@ -4908,7 +4908,7 @@ spec:
       additionalPodMonitors:
       ## Name of the PodMonitor to create
       ##
-      - name: "addPodMon"
+      - name: "addpodmon"
 
         ## Additional labels to set used for the PodMonitorSelector. Together with standard labels from
         ## the chart
