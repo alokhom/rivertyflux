@@ -5,10 +5,10 @@ resources:
   - crd-standardinstall.yaml
   - HelmRepository.yaml
   - istiobase-HelmRelease.yaml
-  - istiocni-HelmRelease.yaml
+  # - istiocni-HelmRelease.yaml
   - istiod-HelmRelease.yaml
-  - istioztunnel-HelmRelease.yaml
-  - istio-waypointGW.yaml
+  # - istioztunnel-HelmRelease.yaml
+  # - istio-waypointGW.yaml
   - ./kiali
 
 # ---
