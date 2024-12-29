@@ -8,7 +8,7 @@ resources:
   - ./etl-db
   - ./mtce
   #- ./kubeFlow
-  - ./chromadb
+  # - ./chromadb
   - ./longhorn
   #- ./flyte
   - ./sqllite3
