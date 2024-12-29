@@ -10,7 +10,7 @@ resources:
   #- ./kubeFlow
   - ./chromadb
   - ./longhorn
-  - ./flyte
+  #- ./flyte
   - ./sqllite3
   - ./cert-manager
   - ./powerdns
