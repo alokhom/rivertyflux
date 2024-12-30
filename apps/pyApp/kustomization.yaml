@@ -10,3 +10,4 @@ resources:
   - ServiceMonitor.yaml
   - AuthorizationPolicy.yaml
   - sa.yaml
+  - monitoring.yaml
