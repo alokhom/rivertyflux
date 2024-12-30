@@ -8,6 +8,6 @@ resources:
   - ImageAutomation.yaml
   - hpa.yaml
   - ServiceMonitor.yaml
+  - PodMonitor.yaml
   - AuthorizationPolicy.yaml
   - sa.yaml
-  - monitoring.yaml

@@ -4785,10 +4785,10 @@ spec:
       #      - nodes/proxy
       #    verbs: [ "get", "list", "watch" ]
 
-      additionalServiceMonitors: []
+      additionalServiceMonitors:
       ## Name of the ServiceMonitor to create
       ##
-      # - name: ""
+      - name: "sermon"
 
         ## Additional labels to set used for the ServiceMonitorSelector. Together with standard labels from
         ## the chart
@@ -4810,7 +4810,7 @@ spec:
 
         ## Label selector for services to which this ServiceMonitor applies
         ##
-        # selector: {}
+        selector:
           ## Example which selects all services to be monitored
           ## with label "monitoredby" with values any of "example-service-1" or "example-service-2"
           # matchExpressions:
@@ -4822,14 +4822,16 @@ spec:
 
           ## label selector for services
           ##
-          # matchLabels: {}
+          matchLabels:
+            service-monitor: py-app
+            
 
         ## Namespaces from which services are selected
         ##
-        # namespaceSelector:
+        namespaceSelector:
           ## Match any namespace
           ##
-          # any: false
+          any: true
 
           ## Explicit list of namespace names to select
           ##
@@ -4837,7 +4839,7 @@ spec:
 
         ## Endpoints of the selected service to be monitored
         ##
-        # endpoints: []
+        # endpoints:
           ## Name of the endpoint's service port
           ## Mutually exclusive with targetPort
           # - port: ""
@@ -4852,11 +4854,11 @@ spec:
 
           ## Interval at which metrics should be scraped
           ##
-          #   interval: 30s
+          # interval: 30s
 
           ## HTTP path to scrape for metrics
           ##
-          #   path: /metrics
+          # path: /metrics
 
           ## HTTP scheme to use for scraping
           ##
@@ -4889,21 +4891,21 @@ spec:
         ## MetricRelabelConfigs to apply to samples after scraping, but before ingestion.
         ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#relabelconfig
         ##
-        # metricRelabelings: []
-        # - action: keep
-        #   regex: 'kube_(daemonset|deployment|pod|namespace|node|statefulset).+'
-        #   sourceLabels: [__name__]
+        metricRelabelings:
+        - action: keep
+          regex: 'kube_(daemonset|deployment|pod|namespace|node|statefulset).+'
+          sourceLabels: [__name__]
 
         ## RelabelConfigs to apply to samples before scraping
         ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#relabelconfig
         ##
-        # relabelings: []
-        # - sourceLabels: [__meta_kubernetes_pod_node_name]
-        #   separator: ;
-        #   regex: ^(.*)$
-        #   targetLabel: nodename
-        #   replacement: $1
-        #   action: replace
+        relabelings:
+        - sourceLabels: [__meta_kubernetes_pod_node_name]
+          separator: ;
+          regex: ^(.*)$
+          targetLabel: nodename
+          replacement: $1
+          action: replace
 
       additionalPodMonitors:
       ## Name of the PodMonitor to create
@@ -4935,7 +4937,7 @@ spec:
           ## label selector for pods
           ##
           matchLabels:
-            app: py-app
+            pod-monitor: py-app
 
         ## PodTargetLabels transfers labels on the Kubernetes Pod onto the target.
         ##
@@ -4950,12 +4952,12 @@ spec:
         namespaceSelector:
           ## Match any namespace
           ##
-          # any: true
+          any: true
 
           ## Explicit list of namespace names to select
           ##
-          matchNames:
-          - py-app
+          # matchNames:
+          # - py-app
         ## Endpoints of the selected pods to be monitored
         ## https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#podmetricsendpoint
         ##

@@ -19,7 +19,8 @@ spec:
       - name: py-app
         image: alokhom/python-docker:1.40.12 # {"$imagepolicy": "py-app:py-apppolicy"}
         ports:
-        - containerPort: 5000
+        - name: py-appweb
+          containerPort: 5000
         resources:
           limits:
             cpu: 100m
