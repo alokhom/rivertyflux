@@ -1,17 +1,25 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  # apps
+  - ./sqllite3-rqlite
+  # ingress
   - ./nginx
+  - ./ambientmesh
+  # data processing
   - ./bitnami_airflow
+  # monitoring and mtce cleanup
   - ./prometheus
-  - ./etl-db
   - ./mtce
-  #- ./kubeFlow
-  # - ./chromadb
-  - ./longhorn
-  #- ./flyte
-  - ./sqllite3
-  - ./cert-manager
   - ./powerdns
   - ./open-telemetry
-  - ./ambientmesh
+  - ./cert-manager
+  # machine learning
+  #- ./kubeFlow
+  # - ./chromadb
+  # storage
+  - ./longhorn
+  # not sure what it is 
+  #- ./flyte
+
+
