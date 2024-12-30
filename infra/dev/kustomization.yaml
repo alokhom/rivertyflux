@@ -5,7 +5,8 @@ resources:
   - ./sqllite3-rqlite
   # ingress
   - ./nginx
-  - ./ambientmesh
+  #- ./ambientmesh
+  - ./consul
   # data processing
   - ./bitnami_airflow
   # monitoring and mtce cleanup
