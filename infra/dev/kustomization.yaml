@@ -17,10 +17,10 @@ resources:
   - ./cert-manager
   # machine learning
   #- ./kubeFlow
-  # - ./chromadb
+  - ./chromadb
   # storage
   - ./longhorn
   # not sure what it is 
-  #- ./flyte
+  - ./flyte
 
 
