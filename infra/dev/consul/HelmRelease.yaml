@@ -2852,7 +2852,7 @@ spec:
         # Name of the Consul namespace to register all
         # k8s pods into. If the Consul namespace does not already exist,
         # it will be created. This will be ignored if `mirroringK8S` is true.
-        consulDestinationNamespace: "default"
+        consulDestinationNamespace: "consul"
 
         # Causes k8s pods to be registered into a Consul namespace
         # of the same name as their k8s namespace, optionally prefixed if
