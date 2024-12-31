@@ -946,7 +946,7 @@ spec:
       # within Kubernetes to join that cluster, this should probably be false.
       # @default: global.enabled
       # @type: boolean
-      enabled: "-"
+      enabled: "true"
 
       # Override global log verbosity level. One of "trace", "debug", "info", "warn", or "error".
       # @type: string
@@ -1067,7 +1067,7 @@ spec:
       #   whenScaled: Retain
       # ```
       # @type: map
-      persistentVolumeClaimRetentionPolicy: null
+      # persistentVolumeClaimRetentionPolicy: null
 
       # This will enable/disable [service mesh](https://developer.hashicorp.com/consul/docs/connect). Setting this to true
       # _will not_ automatically secure pod communication, this
