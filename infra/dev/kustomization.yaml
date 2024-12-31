@@ -5,6 +5,8 @@ resources:
   - ./sqllite3-rqlite
   # ingress
   - ./nginx
+  # git
+  - ./gitea
   #- ./ambientmesh
   - ./consul
   # data processing
