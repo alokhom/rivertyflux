@@ -1200,6 +1200,7 @@ spec:
       #"8080": "default/example-tcp-svc:9000"
       #"5000": "py-app/py-app:5000"
       "54": "powerdns/powerdns-dns-tcp:53"
+      "22": "gitea/gitea-ssh:22"
 
     # -- UDP service key-value pairs
     ## Ref: https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/exposing-tcp-udp-services.md
