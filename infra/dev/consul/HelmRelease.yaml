@@ -1052,7 +1052,7 @@ spec:
       # contains best practices and recommendations for selecting suitable
       # hardware sizes for your Consul servers.
       # @type: string
-      storageClass: null
+      storageClass: local-path
 
       # The [Persistent Volume Claim (PVC) retention policy](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#persistentvolumeclaim-retention)
       # controls if and how PVCs are deleted during the lifecycle of a StatefulSet.
@@ -1312,12 +1312,12 @@ spec:
       # Example:
       #
       # ```yaml
-      # nodeSelector: |
-      #   beta.kubernetes.io/arch: amd64
+      nodeSelector: |
+        beta.kubernetes.io/arch: amd64
       # ```
       #
       # @type: string
-      nodeSelector: null
+      # nodeSelector: null
 
       # This value references an existing
       # Kubernetes [`priorityClassName`](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/#pod-priority)
