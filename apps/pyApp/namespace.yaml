@@ -3,4 +3,8 @@ kind: Namespace
 metadata:
   name: py-app
   labels:
+    connect-inject: enabled
     istio.io/dataplane-mode: ambient
+    kubernetes.io/metadata.name: py-app
+    kustomize.toolkit.fluxcd.io/name: apps
+    kustomize.toolkit.fluxcd.io/namespace: flux-system
