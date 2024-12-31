@@ -2808,12 +2808,12 @@ spec:
       # ```
       # @type: string
       namespaceSelector: |
+        matchLabels:
+          connect-inject : enabled
         matchExpressions:
           - key: "kubernetes.io/metadata.name"
             operator: "NotIn"
             values: ["kube-system","local-path-storage","openebs","gmp-system","gke-managed-cim"]
-        matchLabels:
-          connect-inject : enabled
 
       # List of k8s namespaces to allow Connect sidecar
       # injection in. If a k8s namespace is not included or is listed in `k8sDenyNamespaces`,
