@@ -946,7 +946,7 @@ spec:
       # within Kubernetes to join that cluster, this should probably be false.
       # @default: global.enabled
       # @type: boolean
-      enabled: "true"
+      enabled: "-"
 
       # Override global log verbosity level. One of "trace", "debug", "info", "warn", or "error".
       # @type: string
@@ -1979,7 +1979,7 @@ spec:
 
         # The service type to register.
         # @type: string
-        type: null
+        type: ClusterIP
 
         # Set the port value of the UI service.
         port:
@@ -2079,7 +2079,7 @@ spec:
         # will inherit from `global.metrics.enabled` value.
         # @type: boolean
         # @default: global.metrics.enabled
-        enabled: "-"
+        enabled: "true"
         # Provider for metrics. Refer to
         # [`metrics_provider`](https://developer.hashicorp.com/consul/docs/agent/config/config-files#ui_config_metrics_provider)
         # This value is only used if `ui.enabled` is set to true.
@@ -2089,7 +2089,7 @@ spec:
         # baseURL is the URL of the prometheus server, usually the service URL.
         # This value is only used if `ui.enabled` is set to true.
         # @type: string
-        baseURL: http://prometheus-server
+        baseURL: http://kps-kube-prometheus-stack-prometheus.prometheus.svc:9090
 
       # Corresponds to [`dashboard_url_templates`](https://developer.hashicorp.com/consul/docs/agent/config/config-files#ui_config_dashboard_url_templates)
       # configuration.
@@ -2391,7 +2391,7 @@ spec:
       # [injection annotation](https://developer.hashicorp.com/consul/docs/k8s/connect#consul-hashicorp-com-connect-inject)
       # to opt-in to Connect injection. If this is true, pods can use the same annotation
       # to explicitly opt-out of injection.
-      default: true
+      default: false
 
       # Configures Transparent Proxy for Consul Service mesh services.
       # Using this feature requires Consul 1.10.0-beta1+.
@@ -2807,13 +2807,13 @@ spec:
       #     namespace-label: label-value
       # ```
       # @type: string
-      namespaceSelector: |
-        matchLabels:
-          connect-inject : enabled
-        matchExpressions:
-          - key: "kubernetes.io/metadata.name"
-            operator: "NotIn"
-            values: ["kube-system","local-path-storage"]
+      # namespaceSelector: |
+      #   matchLabels:
+      #     connect-inject : enabled
+      #   matchExpressions:
+      #     - key: "kubernetes.io/metadata.name"
+      #       operator: "NotIn"
+      #       values: ["kube-system","local-path-storage"]
 
       # List of k8s namespaces to allow Connect sidecar
       # injection in. If a k8s namespace is not included or is listed in `k8sDenyNamespaces`,
@@ -2843,7 +2843,7 @@ spec:
       # Note: `namespaceSelector` takes precedence over this since it is applied first.
       # `kube-system` and `kube-public` are never injected.
       # @type: array<string>
-      k8sDenyNamespaces: ["kube-system","local-path-storage"]
+      k8sDenyNamespaces: []
 
       # [Enterprise Only] These settings manage the connect injector's interaction with
       # Consul namespaces (requires consul-ent v1.7+).
