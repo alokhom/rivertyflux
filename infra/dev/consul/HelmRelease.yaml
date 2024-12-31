@@ -2725,8 +2725,8 @@ spec:
       # ```
       #
       # @type: map
-      extraLabels:
-        sidecar-label: "sidecar"
+      # extraLabels:
+      #   sidecar-label: "sidecar"
 
       # This value defines additional annotations for
       # connect inject pods. This should be formatted as a multi-line string.
@@ -2802,9 +2802,9 @@ spec:
       # Example:
       #
       # ```yaml
-      # namespaceSelector: |
-      #   matchLabels:
-      #     namespace-label: label-value
+      namespaceSelector: |
+        matchLabels:
+          connect-inject : enabled
       # ```
       # @type: string
       # namespaceSelector: |
