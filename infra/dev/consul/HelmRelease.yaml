@@ -2572,7 +2572,7 @@ spec:
         # If true, then all traffic redirection setup uses the consul-cni plugin.
         # Requires connectInject.enabled to also be true.
         # @type: boolean
-        enabled: true
+        enabled: false
 
         # Log level for the installer and plugin. Overrides global.logLevel
         # @type: string
