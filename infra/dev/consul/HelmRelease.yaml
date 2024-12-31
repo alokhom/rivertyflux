@@ -1062,9 +1062,9 @@ spec:
       # Example:
       #
       # ```yaml
-      # persistentVolumeClaimRetentionPolicy:
-      #   whenDeleted: Retain
-      #   whenScaled: Retain
+      persistentVolumeClaimRetentionPolicy:
+        whenDeleted: Retain
+        whenScaled: Retain
       # ```
       # @type: map
       # persistentVolumeClaimRetentionPolicy: null
@@ -1194,10 +1194,10 @@ spec:
       # Example:
       #
       # ```yaml
-      # extraConfig: |
-      #   {
-      #     "log_level": "DEBUG"
-      #   }
+      extraConfig: |
+        {
+          "log_level": "DEBUG"
+        }
       # ```
       #
       # This can also be set using Helm's `--set` flag using the following syntax:
@@ -1205,8 +1205,8 @@ spec:
       # ```shell-session
       # --set 'server.extraConfig="{"log_level": "DEBUG"}"'
       # ```
-      extraConfig: |
-        {}
+      # extraConfig: |
+      #  {}
 
       # A list of extra volumes to mount for server agents. This
       # is useful for bringing in extra data that can be referenced by other configurations
