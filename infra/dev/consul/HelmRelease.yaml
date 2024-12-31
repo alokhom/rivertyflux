@@ -2830,7 +2830,7 @@ spec:
       # `namespaceSelector` takes precedence over both since it is applied first.
       # `kube-system` and `kube-public` are never injected, even if included here.
       # @type: array<string>
-      k8sAllowNamespaces: ["*"]
+      k8sAllowNamespaces: ["py-app"]
 
       # List of k8s namespaces that should not allow Connect
       # sidecar injection. This list takes precedence over `k8sAllowNamespaces`.
@@ -2843,7 +2843,7 @@ spec:
       # Note: `namespaceSelector` takes precedence over this since it is applied first.
       # `kube-system` and `kube-public` are never injected.
       # @type: array<string>
-      k8sDenyNamespaces: []
+      k8sDenyNamespaces: ["kube-system","local-path-storage","openebs","gmp-system","gke-managed-cim"]
 
       # [Enterprise Only] These settings manage the connect injector's interaction with
       # Consul namespaces (requires consul-ent v1.7+).
